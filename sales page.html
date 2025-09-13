@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Education Center Management System </title>
+    <meta name="description" content="Complete ERP system for Quran academies and Islamic education centers. Manage students, teachers, schedules, and fees automatically.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #059669;
+            --accent-color: #dc2626;
+            --dark-color: #1f2937;
+            --light-color: #f8fafc;
+            --text-color: #374151;
+            --border-color: #e5e7eb;
+            --gradient: linear-gradient(135deg, #1e40af 0%, #059669 100%);
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #059669 100%);
+            color: white;
+            padding: 80px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 255, 214, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="islamicPattern" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M30 5 L35 20 L50 15 L40 30 L55 35 L40 40 L50 55 L35 50 L30 65 L25 50 L10 55 L20 40 L5 35 L20 30 L10 15 L25 20 Z" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/><circle cx="30" cy="30" r="3" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23islamicPattern)"/></svg>');
+            opacity: 0.4;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .header .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Pain Points Section */
+        .pain-points {
+            padding: 80px 0;
+            background: var(--light-color);
+        }
+
+        .pain-points h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 40px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        .pain-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .pain-list li {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .pain-list li:hover {
+            transform: translateY(-5px);
+        }
+
+        .pain-list li::before {
+            content: '→';
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        .sound-familiar {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 40px;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .video-section h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .video-description {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            font-style: italic;
+            color: var(--text-color);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            border-radius: 15px;
+            z-index: 10;
+        }
+        
+        .video-placeholder.hidden {
+            display: none;
+        }
+
+        /* Cost Section */
+        .cost-section {
+            padding: 80px 0;
+            background: var(--light-color);
+        }
+
+        .cost-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        .cost-list {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cost-list li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .cost-list li strong {
+            color: var(--accent-color);
+            margin-right: 10px;
+        }
+
+        .real-cost {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-top: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .solution-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        .solution-description {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
+            background: var(--light-color);
+        }
+
+        .features-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-card h3::before {
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-card h3.student::before { content: '\f501'; }
+        .feature-card h3.roles::before { content: '\f0c0'; }
+        .feature-card h3.schedule::before { content: '\f073'; }
+        .feature-card h3.attendance::before { content: '\f46c'; }
+        .feature-card h3.financial::before { content: '\f155'; }
+        .feature-card h3.analytics::before { content: '\f080'; }
+
+        .feature-card ul {
+            list-style: none;
+        }
+
+        .feature-card ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-card ul li::before {
+            content: '✅';
+            margin-right: 10px;
+        }
+
+        /* Tech Section */
+        .tech-section {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .tech-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--dark-color);
+        }
+
+        .tech-benefits {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .tech-benefits li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tech-benefits li::before {
+            content: '✅';
+            margin-right: 10px;
+        }
+
+        .tech-promise {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 40px;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 80px 0;
+            background: var(--light-color);
+        }
+
+        .timeline-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary-color);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            width: 45%;
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 15px solid transparent;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -30px;
+            border-left-color: white;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -30px;
+            border-right-color: white;
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .pricing-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--dark-color);
+        }
+
+        .current-cost {
+            background: var(--light-color);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .current-cost h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .current-cost ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .current-cost ul li {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .total-cost {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            border-top: 2px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 15px;
+            padding: 40px 30px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-color);
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .pricing-card ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-card ul li::before {
+            content: '✅';
+            margin-right: 10px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .cta-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 40px 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .cta-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-card p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #b91c1c;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Deal Section */
+        .deal-section {
+            padding: 80px 0;
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+        }
+
+        .deal-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .choices {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+        }
+
+        .choice {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .choice.bad {
+            border-color: var(--accent-color);
+        }
+
+        .choice.good {
+            border-color: var(--secondary-color);
+        }
+
+        .choice h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .choice.bad h3 {
+            color: var(--accent-color);
+        }
+
+        .choice.good h3 {
+            color: var(--secondary-color);
+        }
+
+        .final-question {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: var(--light-color);
+        }
+
+        .faq-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            background: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            transition: background-color 0.3s ease;
+            line-height: 1.4;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .faq-question:hover {
+            background: var(--light-color);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 15px;
+            margin-top: 2px;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            background: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            line-height: 1.5;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .faq-answer.active {
+            max-height: 300px;
+            padding: 0 30px 25px;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .ps-note {
+            margin-top: 60px;
+            font-style: italic;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        
+        /* Large Desktop (1200px+) - Already handled by default styles */
+        
+        /* Medium Desktop and Tablets (768px - 1199px) */
+        @media (max-width: 1199px) {
+            .container {
+                max-width: 960px;
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            
+            .header h1 {
+                font-size: clamp(2rem, 4vw, 3rem);
+            }
+        }
+
+        /* Tablets (768px - 991px) */
+        @media (max-width: 991px) {
+            .container {
+                max-width: 720px;
+                padding: 0 25px;
+            }
+            
+            .header {
+                padding: 60px 0 80px;
+            }
+            
+            .header h1 {
+                font-size: clamp(1.8rem, 4vw, 2.5rem);
+                line-height: 1.3;
+            }
+            
+            .header .subtitle {
+                font-size: clamp(1rem, 3vw, 1.2rem);
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            
+            .feature-card {
+                padding: 30px 20px;
+            }
+            
+            .pricing-cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .cta-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* Small Tablets and Large Phones (768px - 767px) */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 540px;
+                padding: 0 20px;
+            }
+            
+            .header {
+                padding: 50px 0 70px;
+            }
+            
+            .header h1 {
+                font-size: clamp(1.5rem, 5vw, 2.2rem);
+                margin-bottom: 20px;
+            }
+            
+            .header .subtitle {
+                font-size: clamp(0.9rem, 3vw, 1.1rem);
+                margin-bottom: 30px;
+            }
+            
+            /* Video responsive adjustments */
+            .video-container {
+                max-width: 100% !important;
+                margin: 0 auto !important;
+            }
+            
+            /* Hero video section */
+            .header div[style*="margin-top: 60px"] {
+                margin-top: 40px !important;
+            }
+            
+            .header h3 {
+                font-size: 1.5rem !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .header p {
+                font-size: 1rem !important;
+                margin-bottom: 30px !important;
+            }
+            
+            /* Features grid for mobile */
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .feature-card {
+                padding: 25px 20px;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+            
+            /* Timeline adjustments */
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: row !important;
+                margin-left: 40px;
+            }
+
+            .timeline-content {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .timeline-content::before {
+                left: -30px !important;
+                border-right-color: white !important;
+                border-left-color: transparent !important;
+            }
+            
+            /* Choice cards */
+            .choices {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .choice {
+                padding: 25px 20px;
+            }
+            
+            /* CTA buttons */
+            .final-cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 320px;
+                font-size: 1.1rem !important;
+                padding: 18px 30px !important;
+            }
+            
+            /* FAQ adjustments */
+            .faq-question {
+                font-size: 1rem;
+                padding: 18px 20px;
+                line-height: 1.3;
+            }
+            
+            .faq-question::after {
+                font-size: 1.3rem;
+                margin-left: 10px;
+            }
+            
+            .faq-answer {
+                padding: 0 20px;
+            }
+            
+            .faq-answer.active {
+                padding: 0 20px 18px;
+                max-height: 250px;
+            }
+            
+            /* Section padding adjustments */
+            .pain-points, .cost-section, .solution-section, 
+            .features-section, .tech-section, .timeline-section, 
+            .cta-section, .deal-section, .faq-section, .final-cta {
+                padding: 60px 0;
+            }
+            
+            /* Text adjustments */
+            .pain-points h2, .cost-section h2, .solution-section h2,
+            .features-section h2, .tech-section h2, .timeline-section h2,
+            .cta-section h2, .deal-section h2, .faq-section h2, .final-cta h2 {
+                font-size: clamp(1.8rem, 4vw, 2.2rem);
+                margin-bottom: 30px;
+            }
+            
+            .pain-list li, .cost-list li {
+                font-size: 1.1rem;
+                padding: 15px;
+                margin-bottom: 12px;
+            }
+        }
+
+        /* Mobile Phones (480px - 767px) */
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .header {
+                padding: 40px 0 60px;
+            }
+            
+            .header h1 {
+                font-size: clamp(1.3rem, 6vw, 1.8rem);
+                line-height: 1.4;
+                margin-bottom: 15px;
+            }
+            
+            .header .subtitle {
+                font-size: clamp(0.85rem, 4vw, 1rem);
+                margin-bottom: 25px;
+            }
+            
+            .header h3 {
+                font-size: 1.3rem !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .header p {
+                font-size: 0.9rem !important;
+                margin-bottom: 25px !important;
+            }
+            
+            /* Button adjustments for small screens */
+            .btn {
+                font-size: 1rem !important;
+                padding: 15px 25px !important;
+                min-width: 280px;
+            }
+            
+            .feature-card {
+                padding: 20px 15px;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .feature-card ul li {
+                font-size: 0.95rem;
+                margin-bottom: 8px;
+            }
+            
+            /* Timeline for small screens */
+            .timeline-content {
+                padding: 15px;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            /* FAQ for small screens */
+            .faq-question {
+                font-size: 0.95rem;
+                padding: 15px 18px;
+                line-height: 1.4;
+                align-items: flex-start;
+            }
+            
+            .faq-question::after {
+                font-size: 1.2rem;
+                margin-left: 8px;
+                margin-top: 1px;
+            }
+            
+            .faq-answer {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+            
+            .faq-answer.active {
+                padding: 0 18px 15px;
+                max-height: 200px;
+            }
+            
+            /* Text size adjustments */
+            .pain-points h2, .cost-section h2, .solution-section h2,
+            .features-section h2, .tech-section h2, .timeline-section h2,
+            .cta-section h2, .deal-section h2, .faq-section h2, .final-cta h2 {
+                font-size: clamp(1.5rem, 5vw, 1.9rem);
+                margin-bottom: 25px;
+            }
+            
+            .pain-list li, .cost-list li {
+                font-size: 1rem;
+                padding: 12px;
+            }
+            
+            .sound-familiar {
+                font-size: 1.3rem;
+            }
+            
+            .real-cost {
+                font-size: 1.2rem;
+                padding: 15px;
+            }
+            
+            /* Section padding for mobile */
+            .pain-points, .cost-section, .solution-section, 
+            .features-section, .tech-section, .timeline-section, 
+            .cta-section, .deal-section, .faq-section, .final-cta {
+                padding: 50px 0;
+            }
+        }
+
+        /* Small Mobile Phones (320px - 479px) */
+        @media (max-width: 479px) {
+            .container {
+                padding: 0 12px;
+            }
+            
+            .header {
+                padding: 30px 0 50px;
+            }
+            
+            .header h1 {
+                font-size: clamp(1.1rem, 7vw, 1.5rem);
+                line-height: 1.5;
+            }
+            
+            .header .subtitle {
+                font-size: clamp(0.8rem, 4vw, 0.95rem);
+            }
+            
+            .header h3 {
+                font-size: 1.1rem !important;
+            }
+            
+            .header p {
+                font-size: 0.85rem !important;
+            }
+            
+            .btn {
+                font-size: 0.95rem !important;
+                padding: 12px 20px !important;
+                min-width: 250px;
+            }
+            
+            .feature-card {
+                padding: 15px 12px;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.1rem;
+            }
+            
+            .feature-card ul li {
+                font-size: 0.9rem;
+            }
+            
+            .pain-list li, .cost-list li {
+                font-size: 0.95rem;
+                padding: 10px;
+            }
+            
+            /* FAQ for very small screens */
+            .faq-question {
+                font-size: 0.9rem;
+                padding: 12px 15px;
+                line-height: 1.3;
+            }
+            
+            .faq-question::after {
+                font-size: 1.1rem;
+                margin-left: 6px;
+            }
+            
+            .faq-answer {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+            
+            .faq-answer.active {
+                padding: 0 15px 12px;
+                max-height: 180px;
+            }
+            
+            /* Scroll to top button adjustment */
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        /* Ultra-wide screens optimization */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1320px;
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+            }
+        }
+
+        /* Landscape phone adjustments */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .header {
+                padding: 30px 0 40px;
+            }
+            
+            .header h1 {
+                font-size: clamp(1.2rem, 4vw, 1.8rem);
+                margin-bottom: 10px;
+            }
+            
+            .header .subtitle {
+                font-size: clamp(0.9rem, 3vw, 1.1rem);
+                margin-bottom: 20px;
+            }
+            
+            .video-container {
+                max-width: 500px !important;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .scroll-top,
+            .video-container,
+            .btn {
+                display: none !important;
+            }
+            
+            .header {
+                background: none !important;
+                color: black !important;
+            }
+            
+            body {
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-top:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .scroll-top.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1>STOP Drowning In Paperwork & Start Running Your Islamic Education Center Like A Real Business</h1>
+                <p class="subtitle">Complete ERP system for Quran academies and Islamic education centers. Manage students, teachers, schedules, and fees automatically.</p>
+                
+                <!-- Hero Video Section -->
+                <div style="margin-top: 60px;">
+                    <h3 style="font-size: 2rem; margin-bottom: 20px;">See It In Action (3-Minute Demo)</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 40px; opacity: 0.95;">"Watch how a teacher marks attendance in 15 seconds, how parents instantly see their child's progress, and how you can generate fee invoices with one click."</p>
+                    
+                    <div class="video-container" style="max-width: 700px; margin: 0 auto;">
+                        <iframe id="demo-video" src="https://www.youtube.com/embed/RGaW82k4dK4?si=nIgbuSr5IuelyO3Z" 
+                                title="Islamic Education Center Management System Demo" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                
+                <!-- Hero CTA -->
+                <div style="margin-top: 40px;">
+                    <a href="#demo" class="btn btn-secondary" style="font-size: 1.2rem; padding: 20px 40px;">📞 Schedule a Demo</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pain Points Section -->
+    <section class="pain-points">
+        <div class="container">
+            <h2>The Brutal Truth About Running A Quran Academy or Tuition Center...</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 40px;">You got into Islamic education to serve Allah and help students learn. <strong>NOT</strong> to spend 3 hours every day doing paperwork, chasing parents for fees, and playing phone tag about attendance.</p>
+            
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px; color: var(--text-color);">But here's what's actually happening to you right now:</p>
+            
+            <ul class="pain-list">
+                <li>You're manually tracking attendance on paper (and losing half the sheets)</li>
+                <li>Parents are constantly texting "Was my child in class today?"</li>
+                <li>You're double-booking students and teachers (chaos ensues)</li>
+                <li>Fee collection is a nightmare of Excel sheets and WhatsApp messages</li>
+                <li>Teachers don't know their schedules until the last minute</li>
+                <li>You have NO IDEA if your center is actually profitable</li>
+            </ul>
+            
+            <p class="sound-familiar">Sound familiar?</p>
+        </div>
+    </section>
+
+
+    <!-- Cost Section -->
+    <section class="cost-section">
+        <div class="container">
+            <h2>Here's What This Is Costing You (And It's More Than You Think)</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px;">Every month you don't have proper systems:</p>
+            
+            <ul class="cost-list">
+                <li><strong>Lost Revenue:</strong> $500-2000 from unpaid/forgotten fees</li>
+                <li><strong>Wasted Time:</strong> 60+ hours on administrative tasks</li>
+                <li><strong>Teacher Turnover:</strong> Good teachers leave due to disorganization</li>
+                <li><strong>Parent Frustration:</strong> They can't see their child's progress</li>
+                <li><strong>Your Sanity:</strong> You're working IN your business, not ON it</li>
+            </ul>
+            
+            <div class="real-cost">
+                <strong>The real cost? You'll never scale past 50 students without systems.</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <h2>I Built The ONLY Management System Specifically For Islamic Education Centers</h2>
+            <div class="solution-description">
+                <p>After seeing dozens of Quran academies and tuition centers struggle with the same problems, I created something different.</p>
+                <p><strong>Not another generic "school management" software.</strong><br>
+                <strong>Not a one-size-fits-all solution.</strong></p>
+                <p style="font-size: 1.3rem; color: var(--primary-color); font-weight: 600;"><strong>A complete ERP system built specifically for Islamic education.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2>Here's What You Get (And Why It Actually Works)</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="student">Student Lifecycle That Actually Makes Sense</h3>
+                    <ul>
+                        <li><strong>Trial → Regular → Completed</strong> tracking (because Islamic education has phases)</li>
+                        <li>Parents get their OWN portal (no more "how's my child doing" texts)</li>
+                        <li>Automatic student ID generation (professional from day 1)</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="roles">Role Management That Understands Your Business</h3>
+                    <ul>
+                        <li><strong>Separate Quran Teachers & Subject Teachers</strong> (because they're different jobs)</li>
+                        <li><strong>Quran Supervisors & Subject Supervisors</strong> (proper hierarchy)</li>
+                        <li><strong>Client portals</strong> for parents (they see progress, you get peace)</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="schedule">Scheduling That Prevents Disasters</h3>
+                    <ul>
+                        <li><strong>Conflict detection</strong> (no more double-booking nightmares)</li>
+                        <li><strong>Recurring classes</strong> with smart patterns</li>
+                        <li><strong>Automatic schedule adjustments</strong> when students freeze/drop</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="attendance">Attendance That Runs Itself</h3>
+                    <ul>
+                        <li>Teachers mark attendance in 30 seconds</li>
+                        <li>Parents see it instantly (no more calls)</li>
+                        <li><strong>Automatic calculations</strong> of attendance percentages</li>
+                        <li><strong>Role-based views</strong> (everyone sees what they need to see)</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="financial">Financial Management That Actually Works</h3>
+                    <ul>
+                        <li><strong>Digital fee challans</strong> (no more lost invoices)</li>
+                        <li><strong>Multi-currency support</strong> (for international students)</li>
+                        <li><strong>Automatic payment tracking</strong> with transaction IDs</li>
+                        <li><strong>Staff salary management</strong> (teachers get paid on time)</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="analytics">Analytics That Help You Grow</h3>
+                    <ul>
+                        <li>See which classes are profitable</li>
+                        <li>Track teacher performance</li>
+                        <li>Monitor student progress trends</li>
+                        <li><strong>Make decisions based on data, not guesswork</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Section -->
+    <section class="tech-section">
+        <div class="container">
+            <h2>"But I'm Not Tech-Savvy..."</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 40px;"><strong>Good.</strong> This wasn't built for tech people.</p>
+            
+            <p style="font-size: 1.1rem; margin-bottom: 40px;">This was built for Islamic education center owners who want to:</p>
+            
+            <ul class="tech-benefits">
+                <li>Spend time teaching, not doing paperwork</li>
+                <li>Have parents THANK them for transparency</li>
+                <li>Never lose another fee payment</li>
+                <li>Scale past 100 students without hiring 3 assistants</li>
+            </ul>
+            
+            <p class="tech-promise"><strong>If you can send a WhatsApp message, you can use this system.</strong></p>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2>Here's What Happens When You Actually Implement This</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Week 1</h3>
+                        <p>You stop losing fee payments and attendance records</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Week 2</h3>
+                        <p>Parents stop calling you 10 times a day</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Week 4</h3>
+                        <p>Teachers know their schedules without asking</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Month 2</h3>
+                        <p>You have actual data about your business</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Month 3</h3>
+                        <p>You're working ON your center, not IN it</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Month 6</h3>
+                        <p>You've scaled to more students with LESS stress</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section - Commented out for now -->
+    <!--
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2>The Investment</h2>
+            
+            <div class="current-cost">
+                <h3>Most Islamic education centers are paying $200-500/month for multiple tools that don't talk to each other:</h3>
+                <ul>
+                    <li><span>WhatsApp Business:</span> <span>$20/month</span></li>
+                    <li><span>Accounting software:</span> <span>$50/month</span></li>
+                    <li><span>Scheduling tool:</span> <span>$30/month</span></li>
+                    <li><span>Student management:</span> <span>$100/month</span></li>
+                    <li><span><strong>Plus 20+ hours of your time every month</strong></span></li>
+                </ul>
+                <div class="total-cost">Total cost: $200-500/month + your sanity</div>
+            </div>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Starter Plan</h3>
+                    <div class="price">$49<span>/month</span></div>
+                    <ul>
+                        <li>Up to 50 students</li>
+                        <li>Basic features</li>
+                        <li>Email support</li>
+                        <li>14-day free trial</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Start Free Trial</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <h3>Professional Plan</h3>
+                    <div class="price">$99<span>/month</span></div>
+                    <ul>
+                        <li>Up to 200 students</li>
+                        <li>All features included</li>
+                        <li>Priority support</li>
+                        <li>Custom branding</li>
+                        <li>Personal setup assistance</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Get Started Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="demo">
+        <div class="container">
+            <h2>Ready to See How This Works?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Book a personalized demo and I'll show you exactly how this system can transform your Islamic education center.
+            </p>
+            
+            <div style="text-align: center;">
+                <a href="#" class="btn btn-secondary" style="font-size: 1.3rem; padding: 25px 50px;">📞 Schedule Your Demo Now</a>
+            </div>
+            
+            <div style="margin-top: 40px; text-align: center; opacity: 0.9;">
+                <p style="margin-bottom: 10px;"><strong>What you'll see in the demo:</strong></p>
+                <ul style="list-style: none; display: inline-block; text-align: left;">
+                    <li>✅ How teachers mark attendance in 15 seconds</li>
+                    <li>✅ Real-time parent portal walkthrough</li>
+                    <li>✅ Automatic fee invoice generation</li>
+                    <li>✅ Smart scheduling with conflict detection</li>
+                    <li>✅ Complete setup process for your center</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deal Section -->
+    <section class="deal-section">
+        <div class="container">
+            <h2>Look, Here's The Deal...</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 40px;">You have two choices:</p>
+            
+            <div class="choices">
+                <div class="choice bad">
+                    <h3>Choice 1</h3>
+                    <p>Keep doing what you're doing. Hope things magically get easier as you grow. Spend the next 2 years drowning in paperwork while your competition gets organized.</p>
+                </div>
+                
+                <div class="choice good">
+                    <h3>Choice 2</h3>
+                    <p>Get the systems that let you focus on what you actually care about - serving Allah and helping students learn.</p>
+                </div>
+            </div>
+            
+            <p class="final-question"><strong>The students and parents are waiting. The only question is: will you be ready for them?</strong></p>
+        </div>
+    </section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <h2>FAQ (Because You're Thinking It)</h2>
+        
+        <div class="faq-container">
+
+            <div class="faq-item">
+                <button class="faq-question">Our team isn’t very tech-savvy—will they be able to use it?</button>
+                <div class="faq-answer">
+                    <p>Yes. The system is simple and mobile-friendly. Each user only sees the tools they need, with clear buttons and guided steps—no tech skills needed.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What roles does the system support?</button>
+                <div class="faq-answer">
+                    <p>It supports Admins, Teachers, Students, Parents, Managers, HR, CSR, and more. Each role gets a tailored dashboard with relevant tools only.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Can we track attendance for students and staff?</button>
+                <div class="faq-answer">
+                    <p>Yes. Attendance tracking is built-in for both students and staff, with daily logs and monthly summaries for quick insights.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">How is class scheduling handled?</button>
+                <div class="faq-answer">
+                    <p>Scheduling is easy—set classes in a few clicks. The system handles recurring classes and sends reminders automatically.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Can we manage student fees and staff salaries?</button>
+                <div class="faq-answer">
+                    <p>Yes. You can generate fee challans, track payments, issue salary slips, and manage financial records easily in one place.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Do we get reports and analytics?</button>
+                <div class="faq-answer">
+                    <p>Yes. You get monthly reports, attendance trends, payment summaries, and performance insights—all presented simply.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Can we manage our staff through this?</button>
+                <div class="faq-answer">
+                    <p>Yes. The HR section lets you manage employee details, assign roles, and keep staff information organized and secure.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Can students and parents use the system?</button>
+                <div class="faq-answer">
+                    <p>Yes. Students and parents have their own logins to view attendance, schedules, fee records, and receive important updates.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Is it mobile-friendly?</button>
+                <div class="faq-answer">
+                    <p>Absolutely. It works smoothly on smartphones, tablets, and computers—no app needed.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Stop Being a Slave to Paperwork?</h2>
+            <p>Book your demo today and see exactly how this can transform your Islamic education center.</p>
+            
+            <div class="final-cta-buttons">
+                <a href="#" class="btn btn-secondary" style="font-size: 1.3rem; padding: 25px 50px;">📞 SCHEDULE YOUR DEMO</a>
+            </div>
+            
+            <div class="ps-note">
+                <p><strong>P.S.</strong> Every day you wait is another day of lost fees, frustrated parents, and your competitors getting ahead. The demo costs you nothing but 30 minutes. What's the real cost of NOT seeing this?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Islamic Education Center Management System. Trusted by Islamic Education Centers Worldwide.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Initialize page functionality when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeVideoPlaceholder();
+            initializeFAQ();
+            initializeScrollToTop();
+            initializeAnimations();
+            initializeSmoothScrolling();
+        });
+
+        // Video placeholder management - No longer needed since we have real video
+        function initializeVideoPlaceholder() {
+            // Real video is now embedded, no placeholder needed
+        }
+
+        // FAQ Accordion
+        function initializeFAQ() {
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isActive = question.classList.contains('active');
+                    
+                    // Close all other FAQs
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('active');
+                    });
+                    
+                    // Toggle current FAQ
+                    if (!isActive) {
+                        question.classList.add('active');
+                        answer.classList.add('active');
+                    }
+                });
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        function initializeSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Scroll to top functionality
+        function initializeScrollToTop() {
+            const scrollTopBtn = document.querySelector('.scroll-top');
+            
+            if (scrollTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        scrollTopBtn.classList.add('show');
+                    } else {
+                        scrollTopBtn.classList.remove('show');
+                    }
+                });
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Animate elements on scroll
+        function initializeAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-on-scroll');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all feature cards and timeline items
+            document.querySelectorAll('.feature-card, .timeline-item, .pricing-card, .cta-card').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Form tracking and analytics (replace with your actual tracking)
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const action = this.textContent.trim();
+                console.log('Button clicked:', action);
+                
+                // Replace with your actual analytics tracking
+                // gtag('event', 'click', {
+                //     'event_category': 'CTA',
+                //     'event_label': action
+                // });
+            });
+        });
+
+        // Video play tracking
+        const video = document.querySelector('iframe');
+        if (video) {
+            // YouTube API for tracking video plays
+            // You can implement this when you add your actual video
+        }
+
+        // Mobile menu and responsive adjustments
+        function handleResize() {
+            if (window.innerWidth <= 768) {
+                // Mobile-specific adjustments
+                document.querySelectorAll('.feature-card').forEach(card => {
+                    card.style.margin = '0 0 20px 0';
+                });
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Run on initial load
+
+        // Lazy loading for better performance
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Performance optimization
+        let ticking = false;
+        function updateOnScroll() {
+            // Throttle scroll events for better performance
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    // Scroll-based animations and effects
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', updateOnScroll);
+    </script>
+</body>
+</html>
