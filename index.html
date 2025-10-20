@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Islamic Education Center Management System </title>
-    <meta name="description" content="Complete ERP system for Quran academies and Islamic education centers. Manage students, teachers, schedules, and fees automatically.">
-    
+    <meta name="description"
+        content="Complete ERP system for Quran academies and Islamic education centers. Manage students, teachers, schedules, and fees automatically.">
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
+
     <style>
         * {
             margin: 0;
@@ -60,7 +63,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 20% 80%, rgba(120, 255, 214, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
@@ -176,7 +179,8 @@
             max-width: 800px;
             margin: 0 auto;
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
             height: 0;
             overflow: hidden;
             border-radius: 15px;
@@ -207,7 +211,7 @@
             border-radius: 15px;
             z-index: 10;
         }
-        
+
         .video-placeholder.hidden {
             display: none;
         }
@@ -332,12 +336,29 @@
             font-size: 1.2rem;
         }
 
-        .feature-card h3.student::before { content: '\f501'; }
-        .feature-card h3.roles::before { content: '\f0c0'; }
-        .feature-card h3.schedule::before { content: '\f073'; }
-        .feature-card h3.attendance::before { content: '\f46c'; }
-        .feature-card h3.financial::before { content: '\f155'; }
-        .feature-card h3.analytics::before { content: '\f080'; }
+        .feature-card h3.student::before {
+            content: '\f501';
+        }
+
+        .feature-card h3.roles::before {
+            content: '\f0c0';
+        }
+
+        .feature-card h3.schedule::before {
+            content: '\f073';
+        }
+
+        .feature-card h3.attendance::before {
+            content: '\f46c';
+        }
+
+        .feature-card h3.financial::before {
+            content: '\f155';
+        }
+
+        .feature-card h3.analytics::before {
+            content: '\f080';
+        }
 
         .feature-card ul {
             list-style: none;
@@ -863,19 +884,19 @@
         }
 
         /* Responsive Design */
-        
+
         /* Large Desktop (1200px+) - Already handled by default styles */
-        
+
         /* Medium Desktop and Tablets (768px - 1199px) */
         @media (max-width: 1199px) {
             .container {
                 max-width: 960px;
             }
-            
+
             .features-grid {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
-            
+
             .header h1 {
                 font-size: clamp(2rem, 4vw, 3rem);
             }
@@ -887,34 +908,34 @@
                 max-width: 720px;
                 padding: 0 25px;
             }
-            
+
             .header {
                 padding: 60px 0 80px;
             }
-            
+
             .header h1 {
                 font-size: clamp(1.8rem, 4vw, 2.5rem);
                 line-height: 1.3;
             }
-            
+
             .header .subtitle {
                 font-size: clamp(1rem, 3vw, 1.2rem);
             }
-            
+
             .features-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 20px;
             }
-            
+
             .feature-card {
                 padding: 30px 20px;
             }
-            
+
             .pricing-cards {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
-            
+
             .cta-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -927,57 +948,57 @@
                 max-width: 540px;
                 padding: 0 20px;
             }
-            
+
             .header {
                 padding: 50px 0 70px;
             }
-            
+
             .header h1 {
                 font-size: clamp(1.5rem, 5vw, 2.2rem);
                 margin-bottom: 20px;
             }
-            
+
             .header .subtitle {
                 font-size: clamp(0.9rem, 3vw, 1.1rem);
                 margin-bottom: 30px;
             }
-            
+
             /* Video responsive adjustments */
             .video-container {
                 max-width: 100% !important;
                 margin: 0 auto !important;
             }
-            
+
             /* Hero video section */
             .header div[style*="margin-top: 60px"] {
                 margin-top: 40px !important;
             }
-            
+
             .header h3 {
                 font-size: 1.5rem !important;
                 margin-bottom: 15px !important;
             }
-            
+
             .header p {
                 font-size: 1rem !important;
                 margin-bottom: 30px !important;
             }
-            
+
             /* Features grid for mobile */
             .features-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
-            
+
             .feature-card {
                 padding: 25px 20px;
             }
-            
+
             .feature-card h3 {
                 font-size: 1.3rem;
                 margin-bottom: 15px;
             }
-            
+
             /* Timeline adjustments */
             .timeline::before {
                 left: 20px;
@@ -998,17 +1019,17 @@
                 border-right-color: white !important;
                 border-left-color: transparent !important;
             }
-            
+
             /* Choice cards */
             .choices {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
-            
+
             .choice {
                 padding: 25px 20px;
             }
-            
+
             /* CTA buttons */
             .final-cta-buttons {
                 flex-direction: column;
@@ -1021,44 +1042,59 @@
                 font-size: 1.1rem !important;
                 padding: 18px 30px !important;
             }
-            
+
             /* FAQ adjustments */
             .faq-question {
                 font-size: 1rem;
                 padding: 18px 20px;
                 line-height: 1.3;
             }
-            
+
             .faq-question::after {
                 font-size: 1.3rem;
                 margin-left: 10px;
             }
-            
+
             .faq-answer {
                 padding: 0 20px;
             }
-            
+
             .faq-answer.active {
                 padding: 0 20px 18px;
                 max-height: 250px;
             }
-            
+
             /* Section padding adjustments */
-            .pain-points, .cost-section, .solution-section, 
-            .features-section, .tech-section, .timeline-section, 
-            .cta-section, .deal-section, .faq-section, .final-cta {
+            .pain-points,
+            .cost-section,
+            .solution-section,
+            .features-section,
+            .tech-section,
+            .timeline-section,
+            .cta-section,
+            .deal-section,
+            .faq-section,
+            .final-cta {
                 padding: 60px 0;
             }
-            
+
             /* Text adjustments */
-            .pain-points h2, .cost-section h2, .solution-section h2,
-            .features-section h2, .tech-section h2, .timeline-section h2,
-            .cta-section h2, .deal-section h2, .faq-section h2, .final-cta h2 {
+            .pain-points h2,
+            .cost-section h2,
+            .solution-section h2,
+            .features-section h2,
+            .tech-section h2,
+            .timeline-section h2,
+            .cta-section h2,
+            .deal-section h2,
+            .faq-section h2,
+            .final-cta h2 {
                 font-size: clamp(1.8rem, 4vw, 2.2rem);
                 margin-bottom: 30px;
             }
-            
-            .pain-list li, .cost-list li {
+
+            .pain-list li,
+            .cost-list li {
                 font-size: 1.1rem;
                 padding: 15px;
                 margin-bottom: 12px;
@@ -1070,61 +1106,61 @@
             .container {
                 padding: 0 15px;
             }
-            
+
             .header {
                 padding: 40px 0 60px;
             }
-            
+
             .header h1 {
                 font-size: clamp(1.3rem, 6vw, 1.8rem);
                 line-height: 1.4;
                 margin-bottom: 15px;
             }
-            
+
             .header .subtitle {
                 font-size: clamp(0.85rem, 4vw, 1rem);
                 margin-bottom: 25px;
             }
-            
+
             .header h3 {
                 font-size: 1.3rem !important;
                 margin-bottom: 10px !important;
             }
-            
+
             .header p {
                 font-size: 0.9rem !important;
                 margin-bottom: 25px !important;
             }
-            
+
             /* Button adjustments for small screens */
             .btn {
                 font-size: 1rem !important;
                 padding: 15px 25px !important;
                 min-width: 280px;
             }
-            
+
             .feature-card {
                 padding: 20px 15px;
             }
-            
+
             .feature-card h3 {
                 font-size: 1.2rem;
             }
-            
+
             .feature-card ul li {
                 font-size: 0.95rem;
                 margin-bottom: 8px;
             }
-            
+
             /* Timeline for small screens */
             .timeline-content {
                 padding: 15px;
             }
-            
+
             .timeline-content h3 {
                 font-size: 1.1rem;
             }
-            
+
             /* FAQ for small screens */
             .faq-question {
                 font-size: 0.95rem;
@@ -1132,49 +1168,64 @@
                 line-height: 1.4;
                 align-items: flex-start;
             }
-            
+
             .faq-question::after {
                 font-size: 1.2rem;
                 margin-left: 8px;
                 margin-top: 1px;
             }
-            
+
             .faq-answer {
                 font-size: 0.9rem;
                 line-height: 1.4;
             }
-            
+
             .faq-answer.active {
                 padding: 0 18px 15px;
                 max-height: 200px;
             }
-            
+
             /* Text size adjustments */
-            .pain-points h2, .cost-section h2, .solution-section h2,
-            .features-section h2, .tech-section h2, .timeline-section h2,
-            .cta-section h2, .deal-section h2, .faq-section h2, .final-cta h2 {
+            .pain-points h2,
+            .cost-section h2,
+            .solution-section h2,
+            .features-section h2,
+            .tech-section h2,
+            .timeline-section h2,
+            .cta-section h2,
+            .deal-section h2,
+            .faq-section h2,
+            .final-cta h2 {
                 font-size: clamp(1.5rem, 5vw, 1.9rem);
                 margin-bottom: 25px;
             }
-            
-            .pain-list li, .cost-list li {
+
+            .pain-list li,
+            .cost-list li {
                 font-size: 1rem;
                 padding: 12px;
             }
-            
+
             .sound-familiar {
                 font-size: 1.3rem;
             }
-            
+
             .real-cost {
                 font-size: 1.2rem;
                 padding: 15px;
             }
-            
+
             /* Section padding for mobile */
-            .pain-points, .cost-section, .solution-section, 
-            .features-section, .tech-section, .timeline-section, 
-            .cta-section, .deal-section, .faq-section, .final-cta {
+            .pain-points,
+            .cost-section,
+            .solution-section,
+            .features-section,
+            .tech-section,
+            .timeline-section,
+            .cta-section,
+            .deal-section,
+            .faq-section,
+            .final-cta {
                 padding: 50px 0;
             }
         }
@@ -1184,73 +1235,74 @@
             .container {
                 padding: 0 12px;
             }
-            
+
             .header {
                 padding: 30px 0 50px;
             }
-            
+
             .header h1 {
                 font-size: clamp(1.1rem, 7vw, 1.5rem);
                 line-height: 1.5;
             }
-            
+
             .header .subtitle {
                 font-size: clamp(0.8rem, 4vw, 0.95rem);
             }
-            
+
             .header h3 {
                 font-size: 1.1rem !important;
             }
-            
+
             .header p {
                 font-size: 0.85rem !important;
             }
-            
+
             .btn {
                 font-size: 0.95rem !important;
                 padding: 12px 20px !important;
                 min-width: 250px;
             }
-            
+
             .feature-card {
                 padding: 15px 12px;
             }
-            
+
             .feature-card h3 {
                 font-size: 1.1rem;
             }
-            
+
             .feature-card ul li {
                 font-size: 0.9rem;
             }
-            
-            .pain-list li, .cost-list li {
+
+            .pain-list li,
+            .cost-list li {
                 font-size: 0.95rem;
                 padding: 10px;
             }
-            
+
             /* FAQ for very small screens */
             .faq-question {
                 font-size: 0.9rem;
                 padding: 12px 15px;
                 line-height: 1.3;
             }
-            
+
             .faq-question::after {
                 font-size: 1.1rem;
                 margin-left: 6px;
             }
-            
+
             .faq-answer {
                 font-size: 0.85rem;
                 line-height: 1.4;
             }
-            
+
             .faq-answer.active {
                 padding: 0 15px 12px;
                 max-height: 180px;
             }
-            
+
             /* Scroll to top button adjustment */
             .scroll-top {
                 bottom: 20px;
@@ -1265,7 +1317,7 @@
             .container {
                 max-width: 1320px;
             }
-            
+
             .features-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 40px;
@@ -1277,17 +1329,17 @@
             .header {
                 padding: 30px 0 40px;
             }
-            
+
             .header h1 {
                 font-size: clamp(1.2rem, 4vw, 1.8rem);
                 margin-bottom: 10px;
             }
-            
+
             .header .subtitle {
                 font-size: clamp(0.9rem, 3vw, 1.1rem);
                 margin-bottom: 20px;
             }
-            
+
             .video-container {
                 max-width: 500px !important;
             }
@@ -1295,17 +1347,18 @@
 
         /* Print styles */
         @media print {
+
             .scroll-top,
             .video-container,
             .btn {
                 display: none !important;
             }
-            
+
             .header {
                 background: none !important;
                 color: black !important;
             }
-            
+
             body {
                 font-size: 12pt;
                 line-height: 1.4;
@@ -1318,6 +1371,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1356,33 +1410,37 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header Section -->
     <header class="header">
         <div class="container">
             <div class="header-content">
                 <h1>STOP Drowning In Paperwork & Easily Manage Your Islamic Academy – All From One Simple System</h1>
-                <p class="subtitle">Complete ERP system for Quran academies and Islamic education centers. Manage students, teachers, schedules, and fees automatically.</p>
-                
+                <p class="subtitle">Complete ERP system for Quran academies and Islamic education centers. Manage
+                    students, teachers, schedules, and fees automatically.</p>
+
                 <!-- Hero Video Section -->
                 <div style="margin-top: 60px;">
                     <h3 style="font-size: 2rem; margin-bottom: 20px;">See It In Action (3-Minute Demo)</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 40px; opacity: 0.95;">"Watch how a teacher marks attendance in 15 seconds, how parents instantly see their child's progress, and how you can generate fee invoices with one click."</p>
-                    
+                    <p style="font-size: 1.1rem; margin-bottom: 40px; opacity: 0.95;">"Watch how a teacher marks
+                        attendance in 15 seconds, how parents instantly see their child's progress, and how you can
+                        generate fee invoices with one click."</p>
+
                     <div class="video-container" style="max-width: 700px; margin: 0 auto;">
-                        <iframe id="demo-video" src="https://www.youtube.com/embed/RGaW82k4dK4?si=nIgbuSr5IuelyO3Z" 
-                                title="Islamic Education Center Management System Demo" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                referrerpolicy="strict-origin-when-cross-origin"
-                                allowfullscreen>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/CMHQLB6b_Qg?si=dFwkdqU7M-S1ouEG"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                         </iframe>
                     </div>
                 </div>
-                
+
                 <!-- Hero CTA -->
                 <div style="margin-top: 40px;">
-                    <a href="https://calendly.com/muhammadahmed" class="btn btn-secondary" style="font-size: 1.2rem; padding: 20px 40px;">📞 Schedule a Demo</a>
+                    <a href="https://calendly.com/muhammadahmed" class="btn btn-secondary"
+                        style="font-size: 1.2rem; padding: 20px 40px;">📞 Schedule a Demo</a>
                 </div>
             </div>
         </div>
@@ -1392,10 +1450,13 @@
     <section class="pain-points">
         <div class="container">
             <h2>The Brutal Truth About Running A Quran Academy or Tuition Center...</h2>
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 40px;">You got into Islamic education to serve Allah and help students learn. <strong>NOT</strong> to spend 3 hours every day doing paperwork, chasing parents for fees, and playing phone tag about attendance.</p>
-            
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px; color: var(--text-color);">But here's what's actually happening to you right now:</p>
-            
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 40px;">You got into Islamic education to
+                serve Allah and help students learn. <strong>NOT</strong> to spend 3 hours every day doing paperwork,
+                chasing parents for fees, and playing phone tag about attendance.</p>
+
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px; color: var(--text-color);">But here's
+                what's actually happening to you right now:</p>
+
             <ul class="pain-list">
                 <li>You're manually tracking attendance on paper (and losing half the sheets)</li>
                 <li>Parents are constantly texting "Was my child in class today?"</li>
@@ -1404,7 +1465,7 @@
                 <li>Teachers don't know their schedules until the last minute</li>
                 <li>You have NO IDEA if your center is actually profitable</li>
             </ul>
-            
+
             <p class="sound-familiar">Sound familiar?</p>
         </div>
     </section>
@@ -1414,8 +1475,9 @@
     <section class="cost-section">
         <div class="container">
             <h2>Here's What This Is Costing You (And It's More Than You Think)</h2>
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px;">Every month you don't have proper systems:</p>
-            
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px;">Every month you don't have proper
+                systems:</p>
+
             <ul class="cost-list">
                 <li><strong>Lost Revenue:</strong> $500-2000 from unpaid/forgotten fees</li>
                 <li><strong>Wasted Time:</strong> 60+ hours on administrative tasks</li>
@@ -1423,7 +1485,7 @@
                 <li><strong>Parent Frustration:</strong> They can't see their child's progress</li>
                 <li><strong>Your Sanity:</strong> You're working IN your business, not ON it</li>
             </ul>
-            
+
             <div class="real-cost">
                 <strong>The real cost? You'll never scale past 50 students without systems.</strong>
             </div>
@@ -1435,10 +1497,13 @@
         <div class="container">
             <h2>I Built The ONLY Management System Specifically For Islamic Education Centers</h2>
             <div class="solution-description">
-                <p>After seeing dozens of Quran academies and tuition centers struggle with the same problems, I created something different.</p>
+                <p>After seeing dozens of Quran academies and tuition centers struggle with the same problems, I created
+                    something different.</p>
                 <p><strong>Not another generic "school management" software.</strong><br>
-                <strong>Not a one-size-fits-all solution.</strong></p>
-                <p style="font-size: 1.3rem; color: var(--primary-color); font-weight: 600;"><strong>A complete ERP system built specifically for Islamic education.</strong></p>
+                    <strong>Not a one-size-fits-all solution.</strong>
+                </p>
+                <p style="font-size: 1.3rem; color: var(--primary-color); font-weight: 600;"><strong>A complete ERP
+                        system built specifically for Islamic education.</strong></p>
             </div>
         </div>
     </section>
@@ -1447,26 +1512,28 @@
     <section class="features-section">
         <div class="container">
             <h2>Here's What You Get (And Why It Actually Works)</h2>
-            
+
             <div class="features-grid">
                 <div class="feature-card">
                     <h3 class="student">Student Lifecycle That Actually Makes Sense</h3>
                     <ul>
-                        <li><strong>Trial → Regular → Completed</strong> tracking (because Islamic education has phases)</li>
+                        <li><strong>Trial → Regular → Completed</strong> tracking (because Islamic education has phases)
+                        </li>
                         <li>Parents get their OWN portal (no more "how's my child doing" texts)</li>
                         <li>Automatic student ID generation (professional from day 1)</li>
                     </ul>
                 </div>
-                
+
                 <div class="feature-card">
                     <h3 class="roles">Role Management That Understands Your Business</h3>
                     <ul>
-                        <li><strong>Separate Quran Teachers & Subject Teachers</strong> (because they're different jobs)</li>
+                        <li><strong>Separate Quran Teachers & Subject Teachers</strong> (because they're different jobs)
+                        </li>
                         <li><strong>Quran Supervisors & Subject Supervisors</strong> (proper hierarchy)</li>
                         <li><strong>Client portals</strong> for parents (they see progress, you get peace)</li>
                     </ul>
                 </div>
-                
+
                 <div class="feature-card">
                     <h3 class="schedule">Scheduling That Prevents Disasters</h3>
                     <ul>
@@ -1475,7 +1542,7 @@
                         <li><strong>Automatic schedule adjustments</strong> when students freeze/drop</li>
                     </ul>
                 </div>
-                
+
                 <div class="feature-card">
                     <h3 class="attendance">Attendance That Runs Itself</h3>
                     <ul>
@@ -1485,7 +1552,7 @@
                         <li><strong>Role-based views</strong> (everyone sees what they need to see)</li>
                     </ul>
                 </div>
-                
+
                 <div class="feature-card">
                     <h3 class="financial">Financial Management That Actually Works</h3>
                     <ul>
@@ -1495,7 +1562,7 @@
                         <li><strong>Staff salary management</strong> (teachers get paid on time)</li>
                     </ul>
                 </div>
-                
+
                 <div class="feature-card">
                     <h3 class="analytics">Analytics That Help You Grow</h3>
                     <ul>
@@ -1513,17 +1580,19 @@
     <section class="tech-section">
         <div class="container">
             <h2>"But I'm Not Tech-Savvy..."</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 40px;"><strong>Good.</strong> This wasn't built for tech people.</p>
-            
-            <p style="font-size: 1.1rem; margin-bottom: 40px;">This was built for Islamic education center owners who want to:</p>
-            
+            <p style="font-size: 1.3rem; margin-bottom: 40px;"><strong>Good.</strong> This wasn't built for tech people.
+            </p>
+
+            <p style="font-size: 1.1rem; margin-bottom: 40px;">This was built for Islamic education center owners who
+                want to:</p>
+
             <ul class="tech-benefits">
                 <li>Spend time teaching, not doing paperwork</li>
                 <li>Have parents THANK them for transparency</li>
                 <li>Never lose another fee payment</li>
                 <li>Scale past 100 students without hiring 3 assistants</li>
             </ul>
-            
+
             <p class="tech-promise"><strong>If you can send a WhatsApp message, you can use this system.</strong></p>
         </div>
     </section>
@@ -1532,7 +1601,7 @@
     <section class="timeline-section">
         <div class="container">
             <h2>Here's What Happens When You Actually Implement This</h2>
-            
+
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
@@ -1540,35 +1609,35 @@
                         <p>You stop losing fee payments and attendance records</p>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Week 2</h3>
                         <p>Parents stop calling you 10 times a day</p>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Week 4</h3>
                         <p>Teachers know their schedules without asking</p>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Month 2</h3>
                         <p>You have actual data about your business</p>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Month 3</h3>
                         <p>You're working ON your center, not IN it</p>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Month 6</h3>
@@ -1632,13 +1701,15 @@
         <div class="container">
             <h2>Ready to See How This Works?</h2>
             <p style="font-size: 1.3rem; margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Book a personalized demo and I'll show you exactly how this system can transform your Islamic education center.
+                Book a personalized demo and I'll show you exactly how this system can transform your Islamic education
+                center.
             </p>
-            
+
             <div style="text-align: center;">
-                <a href="https://calendly.com/muhammadahmed" class="btn btn-secondary" style="font-size: 1.3rem; padding: 25px 50px;">📞 Schedule Your Demo Now</a>
+                <a href="https://calendly.com/muhammadahmed" class="btn btn-secondary"
+                    style="font-size: 1.3rem; padding: 25px 50px;">📞 Schedule Your Demo Now</a>
             </div>
-            
+
             <div style="margin-top: 40px; text-align: center; opacity: 0.9;">
                 <p style="margin-bottom: 10px;"><strong>What you'll see in the demo:</strong></p>
                 <ul style="list-style: none; display: inline-block; text-align: left;">
@@ -1657,96 +1728,107 @@
         <div class="container">
             <h2>Look, Here's The Deal...</h2>
             <p style="font-size: 1.2rem; margin-bottom: 40px;">You have two choices:</p>
-            
+
             <div class="choices">
                 <div class="choice bad">
                     <h3>Choice 1</h3>
-                    <p>Keep doing what you're doing. Hope things magically get easier as you grow. Spend the next 2 years drowning in paperwork while your competition gets organized.</p>
+                    <p>Keep doing what you're doing. Hope things magically get easier as you grow. Spend the next 2
+                        years drowning in paperwork while your competition gets organized.</p>
                 </div>
-                
+
                 <div class="choice good">
                     <h3>Choice 2</h3>
-                    <p>Get the systems that let you focus on what you actually care about - serving Allah and helping students learn.</p>
+                    <p>Get the systems that let you focus on what you actually care about - serving Allah and helping
+                        students learn.</p>
                 </div>
             </div>
-            
-            <p class="final-question"><strong>The students and parents are waiting. The only question is: will you be ready for them?</strong></p>
+
+            <p class="final-question"><strong>The students and parents are waiting. The only question is: will you be
+                    ready for them?</strong></p>
         </div>
     </section>
 
-<!-- FAQ Section -->
-<section class="faq-section">
-    <div class="container">
-        <h2>FAQ (Because You're Thinking It)</h2>
-        
-        <div class="faq-container">
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>FAQ (Because You're Thinking It)</h2>
 
-            <div class="faq-item">
-                <button class="faq-question">Our team isn’t very tech-savvy—will they be able to use it?</button>
-                <div class="faq-answer">
-                    <p>Yes. The system is simple and mobile-friendly. Each user only sees the tools they need, with clear buttons and guided steps—no tech skills needed.</p>
+            <div class="faq-container">
+
+                <div class="faq-item">
+                    <button class="faq-question">Our team isn’t very tech-savvy—will they be able to use it?</button>
+                    <div class="faq-answer">
+                        <p>Yes. The system is simple and mobile-friendly. Each user only sees the tools they need, with
+                            clear buttons and guided steps—no tech skills needed.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <button class="faq-question">What roles does the system support?</button>
-                <div class="faq-answer">
-                    <p>It supports Admins, Teachers, Students, Parents, Managers, HR, CSR, and more. Each role gets a tailored dashboard with relevant tools only.</p>
+                <div class="faq-item">
+                    <button class="faq-question">What roles does the system support?</button>
+                    <div class="faq-answer">
+                        <p>It supports Admins, Teachers, Students, Parents, Managers, HR, CSR, and more. Each role gets
+                            a tailored dashboard with relevant tools only.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <button class="faq-question">Can we track attendance for students and staff?</button>
-                <div class="faq-answer">
-                    <p>Yes. Attendance tracking is built-in for both students and staff, with daily logs and monthly summaries for quick insights.</p>
+                <div class="faq-item">
+                    <button class="faq-question">Can we track attendance for students and staff?</button>
+                    <div class="faq-answer">
+                        <p>Yes. Attendance tracking is built-in for both students and staff, with daily logs and monthly
+                            summaries for quick insights.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <button class="faq-question">How is class scheduling handled?</button>
-                <div class="faq-answer">
-                    <p>Scheduling is easy—set classes in a few clicks. The system handles recurring classes and sends reminders automatically.</p>
+                <div class="faq-item">
+                    <button class="faq-question">How is class scheduling handled?</button>
+                    <div class="faq-answer">
+                        <p>Scheduling is easy—set classes in a few clicks. The system handles recurring classes and
+                            sends reminders automatically.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <button class="faq-question">Can we manage student fees and staff salaries?</button>
-                <div class="faq-answer">
-                    <p>Yes. You can generate fee challans, track payments, issue salary slips, and manage financial records easily in one place.</p>
+                <div class="faq-item">
+                    <button class="faq-question">Can we manage student fees and staff salaries?</button>
+                    <div class="faq-answer">
+                        <p>Yes. You can generate fee challans, track payments, issue salary slips, and manage financial
+                            records easily in one place.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <button class="faq-question">Do we get reports and analytics?</button>
-                <div class="faq-answer">
-                    <p>Yes. You get monthly reports, attendance trends, payment summaries, and performance insights—all presented simply.</p>
+                <div class="faq-item">
+                    <button class="faq-question">Do we get reports and analytics?</button>
+                    <div class="faq-answer">
+                        <p>Yes. You get monthly reports, attendance trends, payment summaries, and performance
+                            insights—all presented simply.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <button class="faq-question">Can we manage our staff through this?</button>
-                <div class="faq-answer">
-                    <p>Yes. The HR section lets you manage employee details, assign roles, and keep staff information organized and secure.</p>
+                <div class="faq-item">
+                    <button class="faq-question">Can we manage our staff through this?</button>
+                    <div class="faq-answer">
+                        <p>Yes. The HR section lets you manage employee details, assign roles, and keep staff
+                            information organized and secure.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <button class="faq-question">Can students and parents use the system?</button>
-                <div class="faq-answer">
-                    <p>Yes. Students and parents have their own logins to view attendance, schedules, fee records, and receive important updates.</p>
+                <div class="faq-item">
+                    <button class="faq-question">Can students and parents use the system?</button>
+                    <div class="faq-answer">
+                        <p>Yes. Students and parents have their own logins to view attendance, schedules, fee records,
+                            and receive important updates.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <button class="faq-question">Is it mobile-friendly?</button>
-                <div class="faq-answer">
-                    <p>Absolutely. It works smoothly on smartphones, tablets, and computers—no app needed.</p>
+                <div class="faq-item">
+                    <button class="faq-question">Is it mobile-friendly?</button>
+                    <div class="faq-answer">
+                        <p>Absolutely. It works smoothly on smartphones, tablets, and computers—no app needed.</p>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <!-- Final CTA -->
@@ -1754,13 +1836,16 @@
         <div class="container">
             <h2>Ready to Stop Being a Slave to Paperwork?</h2>
             <p>Book your demo today and see exactly how this can transform your Islamic education center.</p>
-            
+
             <div class="final-cta-buttons">
-                <a href="#" class="btn btn-secondary" style="font-size: 1.3rem; padding: 25px 50px;">📞 SCHEDULE YOUR DEMO</a>
+                <a href="#" class="btn btn-secondary" style="font-size: 1.3rem; padding: 25px 50px;">📞 SCHEDULE YOUR
+                    DEMO</a>
             </div>
-            
+
             <div class="ps-note">
-                <p><strong>P.S.</strong> Every day you wait is another day of lost fees, frustrated parents, and your competitors getting ahead. The demo costs you nothing but 30 minutes. What's the real cost of NOT seeing this?</p>
+                <p><strong>P.S.</strong> Every day you wait is another day of lost fees, frustrated parents, and your
+                    competitors getting ahead. The demo costs you nothing but 30 minutes. What's the real cost of NOT
+                    seeing this?</p>
             </div>
         </div>
     </section>
@@ -1768,7 +1853,8 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Islamic Education Center Management System. Trusted by Islamic Education Centers Worldwide.</p>
+            <p>&copy; 2024 Islamic Education Center Management System. Trusted by Islamic Education Centers Worldwide.
+            </p>
         </div>
     </footer>
 
@@ -1779,7 +1865,7 @@
 
     <script>
         // Initialize page functionality when DOM loads
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             initializeVideoPlaceholder();
             initializeFAQ();
             initializeScrollToTop();
@@ -1798,13 +1884,13 @@
                 question.addEventListener('click', () => {
                     const answer = question.nextElementSibling;
                     const isActive = question.classList.contains('active');
-                    
+
                     // Close all other FAQs
                     document.querySelectorAll('.faq-question').forEach(q => {
                         q.classList.remove('active');
                         q.nextElementSibling.classList.remove('active');
                     });
-                    
+
                     // Toggle current FAQ
                     if (!isActive) {
                         question.classList.add('active');
@@ -1833,7 +1919,7 @@
         // Scroll to top functionality
         function initializeScrollToTop() {
             const scrollTopBtn = document.querySelector('.scroll-top');
-            
+
             if (scrollTopBtn) {
                 window.addEventListener('scroll', () => {
                     if (window.pageYOffset > 300) {
@@ -1875,10 +1961,10 @@
 
         // Form tracking and analytics (replace with your actual tracking)
         document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
+            btn.addEventListener('click', function (e) {
                 const action = this.textContent.trim();
                 console.log('Button clicked:', action);
-                
+
                 // Replace with your actual analytics tracking
                 // gtag('event', 'click', {
                 //     'event_category': 'CTA',
@@ -1943,5 +2029,3 @@
 </body>
 
 </html>
-
-
