@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Islamic Education Center Management System </title>
+    <title>Islamic Education Center Management System</title>
     <meta name="description"
         content="Complete ERP system for Quran academies and Islamic education centers. Manage students, teachers, schedules, and fees automatically.">
 
@@ -101,7 +101,585 @@
             margin-right: auto;
         }
 
-        /* Pain Points Section */
+        /* Video Section */
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Screenshot Carousel Section - NEW */
+        .screenshot-carousel-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            overflow: hidden;
+        }
+
+        .screenshot-carousel-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        .screenshot-carousel-section p {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            color: var(--text-color);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 30px;
+            padding: 20px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) var(--light-color);
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            height: 12px;
+        }
+
+        .carousel-container::-webkit-scrollbar-track {
+            background: var(--light-color);
+            border-radius: 10px;
+        }
+
+        .carousel-container::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        .carousel-container::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+
+        .screenshot-card {
+            min-width: 600px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #e0e7ff 0%, #dbeafe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+
+        .screenshot-caption {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .screenshot-caption h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .screenshot-caption p {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .carousel-nav-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-nav-btn:hover {
+            background: var(--secondary-color);
+            transform: scale(1.1);
+        }
+
+        /* Trust Bar - NEW */
+        .trust-bar {
+            background: white;
+            padding: 60px 0;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .trust-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .trust-stat {
+            padding: 20px;
+        }
+
+        .trust-stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .trust-stat-label {
+            font-size: 1rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        /* Testimonials Section - NEW */
+        .testimonials-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .testimonials-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--light-color);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-style: italic;
+            color: var(--text-color);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .testimonial-info h5 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .testimonial-info p {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .testimonial-stars {
+            color: #fbbf24;
+            margin-bottom: 15px;
+        }
+
+        /* Comparison Table - NEW */
+        .comparison-section {
+            padding: 80px 0;
+            background: var(--light-color);
+        }
+
+        .comparison-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        .comparison-table {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background: var(--gradient);
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .comparison-header div {
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.2s ease;
+        }
+
+        .comparison-row:hover {
+            background: var(--light-color);
+        }
+
+        .comparison-row div {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .comparison-row div:first-child {
+            justify-content: flex-start;
+            font-weight: 500;
+        }
+
+        .comparison-icon {
+            font-size: 1.5rem;
+        }
+
+        .comparison-icon.bad {
+            color: var(--accent-color);
+        }
+
+        .comparison-icon.good {
+            color: var(--secondary-color);
+        }
+
+        /* ROI Calculator - NEW */
+        .roi-calculator-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .roi-calculator-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        .roi-calculator-section p {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            color: var(--text-color);
+        }
+
+        .roi-calculator {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--light-color);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .roi-input-group {
+            margin-bottom: 30px;
+        }
+
+        .roi-input-group label {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .roi-input-group input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+
+        .roi-input-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .roi-results {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .roi-result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .roi-result-item:last-child {
+            border-bottom: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            padding-top: 20px;
+        }
+
+        .roi-result-label {
+            font-weight: 500;
+        }
+
+        .roi-result-value {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Sticky CTA Button - NEW */
+        .sticky-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .sticky-cta.show {
+            display: block;
+            animation: slideInRight 0.5s ease;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .sticky-cta-btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 18px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .sticky-cta-btn:hover {
+            background: #b91c1c;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.5);
+        }
+
+        /* WhatsApp Button - NEW */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7);
+        }
+
+        /* Enhanced Footer - NEW */
+        .enhanced-footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-section .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .footer-section .contact-item i {
+            color: var(--secondary-color);
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* All existing styles from original file */
         .pain-points {
             padding: 80px 0;
             background: var(--light-color);
@@ -152,74 +730,9 @@
             margin-top: 40px;
         }
 
-        /* Video Section */
-        .video-section {
-            padding: 80px 0;
-            background: white;
-            text-align: center;
-        }
-
-        .video-section h3 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-        }
-
-        .video-description {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            font-style: italic;
-            color: var(--text-color);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .video-container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            padding-bottom: 56.25%;
-            /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: var(--shadow-hover);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .video-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            border-radius: 15px;
-            z-index: 10;
-        }
-
-        .video-placeholder.hidden {
-            display: none;
-        }
-
-        /* Cost Section */
         .cost-section {
             padding: 80px 0;
-            background: var(--light-color);
+            background: white;
         }
 
         .cost-section h2 {
@@ -240,7 +753,7 @@
             margin-bottom: 15px;
             display: flex;
             align-items: center;
-            background: white;
+            background: var(--light-color);
             padding: 15px 20px;
             border-radius: 8px;
             box-shadow: var(--shadow);
@@ -258,7 +771,7 @@
             color: var(--accent-color);
             margin-top: 40px;
             padding: 20px;
-            background: white;
+            background: var(--light-color);
             border-radius: 10px;
             box-shadow: var(--shadow);
             max-width: 600px;
@@ -266,10 +779,9 @@
             margin-right: auto;
         }
 
-        /* Solution Section */
         .solution-section {
             padding: 80px 0;
-            background: white;
+            background: var(--light-color);
         }
 
         .solution-section h2 {
@@ -288,10 +800,9 @@
             margin-right: auto;
         }
 
-        /* Features Section */
         .features-section {
             padding: 80px 0;
-            background: var(--light-color);
+            background: white;
         }
 
         .features-section h2 {
@@ -309,7 +820,7 @@
         }
 
         .feature-card {
-            background: white;
+            background: var(--light-color);
             padding: 40px 30px;
             border-radius: 15px;
             box-shadow: var(--shadow);
@@ -375,10 +886,9 @@
             margin-right: 10px;
         }
 
-        /* Tech Section */
         .tech-section {
             padding: 80px 0;
-            background: white;
+            background: var(--light-color);
             text-align: center;
         }
 
@@ -414,86 +924,6 @@
             margin-top: 40px;
         }
 
-        /* Timeline Section */
-        .timeline-section {
-            padding: 80px 0;
-            background: var(--light-color);
-        }
-
-        .timeline-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: var(--dark-color);
-            text-align: center;
-        }
-
-        .timeline {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: var(--primary-color);
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            display: flex;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(odd) {
-            flex-direction: row;
-        }
-
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-content {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            width: 45%;
-            position: relative;
-        }
-
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 0;
-            height: 0;
-            border: 15px solid transparent;
-            transform: translateY(-50%);
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content::before {
-            right: -30px;
-            border-left-color: white;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content::before {
-            left: -30px;
-            border-right-color: white;
-        }
-
-        .timeline-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        /* Pricing Section */
         .pricing-section {
             padding: 80px 0;
             background: white;
@@ -506,46 +936,11 @@
             color: var(--dark-color);
         }
 
-        .current-cost {
-            background: var(--light-color);
-            padding: 40px;
-            border-radius: 15px;
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .current-cost h3 {
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-
-        .current-cost ul {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-
-        .current-cost ul li {
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .total-cost {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            border-top: 2px solid var(--border-color);
-            padding-top: 20px;
-        }
-
         .pricing-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -604,7 +999,6 @@
             margin-right: 10px;
         }
 
-        /* CTA Section */
         .cta-section {
             padding: 80px 0;
             background: var(--gradient);
@@ -617,38 +1011,6 @@
             margin-bottom: 60px;
         }
 
-        .cta-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .cta-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 40px 30px;
-            transition: transform 0.3s ease;
-        }
-
-        .cta-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .cta-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .cta-card p {
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        /* Buttons */
         .btn {
             display: inline-block;
             padding: 15px 30px;
@@ -686,727 +1048,73 @@
             transform: translateY(-3px);
         }
 
-        .btn-outline {
-            background: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* Deal Section */
-        .deal-section {
-            padding: 80px 0;
-            background: var(--dark-color);
-            color: white;
-            text-align: center;
-        }
-
-        .deal-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-        }
-
-        .choices {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto 60px;
-        }
-
-        .choice {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 40px;
-            border: 2px solid transparent;
-            transition: border-color 0.3s ease;
-        }
-
-        .choice.bad {
-            border-color: var(--accent-color);
-        }
-
-        .choice.good {
-            border-color: var(--secondary-color);
-        }
-
-        .choice h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .choice.bad h3 {
-            color: var(--accent-color);
-        }
-
-        .choice.good h3 {
-            color: var(--secondary-color);
-        }
-
-        .final-question {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            font-weight: 600;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            padding: 80px 0;
-            background: var(--light-color);
-        }
-
-        .faq-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: var(--dark-color);
-            text-align: center;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: white;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 25px 30px;
-            background: white;
-            border: none;
-            width: 100%;
-            text-align: left;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            transition: background-color 0.3s ease;
-            line-height: 1.4;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .faq-question:hover {
-            background: var(--light-color);
-        }
-
-        .faq-question::after {
-            content: '+';
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            transition: transform 0.3s ease;
-            flex-shrink: 0;
-            margin-left: 15px;
-            margin-top: 2px;
-        }
-
-        .faq-question.active::after {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            padding: 0 30px;
-            background: white;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            line-height: 1.5;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .faq-answer.active {
-            max-height: 300px;
-            padding: 0 30px 25px;
-        }
-
-        .faq-answer p {
-            margin: 0;
-            color: var(--text-color);
-        }
-
-        /* Final CTA */
-        .final-cta {
-            padding: 100px 0;
-            background: var(--gradient);
-            color: white;
-            text-align: center;
-        }
-
-        .final-cta h2 {
-            font-size: 3rem;
-            margin-bottom: 40px;
-        }
-
-        .final-cta p {
-            font-size: 1.2rem;
-            margin-bottom: 50px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .final-cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .ps-note {
-            margin-top: 60px;
-            font-style: italic;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-
         /* Responsive Design */
-
-        /* Large Desktop (1200px+) - Already handled by default styles */
-
-        /* Medium Desktop and Tablets (768px - 1199px) */
-        @media (max-width: 1199px) {
-            .container {
-                max-width: 960px;
-            }
-
-            .features-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            }
-
-            .header h1 {
-                font-size: clamp(2rem, 4vw, 3rem);
-            }
-        }
-
-        /* Tablets (768px - 991px) */
-        @media (max-width: 991px) {
-            .container {
-                max-width: 720px;
-                padding: 0 25px;
-            }
-
-            .header {
-                padding: 60px 0 80px;
-            }
-
-            .header h1 {
-                font-size: clamp(1.8rem, 4vw, 2.5rem);
-                line-height: 1.3;
-            }
-
-            .header .subtitle {
-                font-size: clamp(1rem, 3vw, 1.2rem);
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 20px;
-            }
-
-            .feature-card {
-                padding: 30px 20px;
-            }
-
-            .pricing-cards {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .cta-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-
-        /* Small Tablets and Large Phones (768px - 767px) */
         @media (max-width: 768px) {
-            .container {
-                max-width: 540px;
-                padding: 0 20px;
+            .screenshot-card {
+                min-width: 90%;
             }
 
-            .header {
-                padding: 50px 0 70px;
-            }
-
-            .header h1 {
-                font-size: clamp(1.5rem, 5vw, 2.2rem);
-                margin-bottom: 20px;
-            }
-
-            .header .subtitle {
-                font-size: clamp(0.9rem, 3vw, 1.1rem);
-                margin-bottom: 30px;
-            }
-
-            /* Video responsive adjustments */
-            .video-container {
-                max-width: 100% !important;
-                margin: 0 auto !important;
-            }
-
-            /* Hero video section */
-            .header div[style*="margin-top: 60px"] {
-                margin-top: 40px !important;
-            }
-
-            .header h3 {
-                font-size: 1.5rem !important;
-                margin-bottom: 15px !important;
-            }
-
-            .header p {
-                font-size: 1rem !important;
-                margin-bottom: 30px !important;
-            }
-
-            /* Features grid for mobile */
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .feature-card {
-                padding: 25px 20px;
-            }
-
-            .feature-card h3 {
-                font-size: 1.3rem;
-                margin-bottom: 15px;
-            }
-
-            /* Timeline adjustments */
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item {
-                flex-direction: row !important;
-                margin-left: 40px;
-            }
-
-            .timeline-content {
-                width: 100%;
-                padding: 20px;
-            }
-
-            .timeline-content::before {
-                left: -30px !important;
-                border-right-color: white !important;
-                border-left-color: transparent !important;
-            }
-
-            /* Choice cards */
-            .choices {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .choice {
-                padding: 25px 20px;
-            }
-
-            /* CTA buttons */
-            .final-cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 320px;
-                font-size: 1.1rem !important;
-                padding: 18px 30px !important;
-            }
-
-            /* FAQ adjustments */
-            .faq-question {
-                font-size: 1rem;
-                padding: 18px 20px;
-                line-height: 1.3;
-            }
-
-            .faq-question::after {
-                font-size: 1.3rem;
-                margin-left: 10px;
-            }
-
-            .faq-answer {
-                padding: 0 20px;
-            }
-
-            .faq-answer.active {
-                padding: 0 20px 18px;
-                max-height: 250px;
-            }
-
-            /* Section padding adjustments */
-            .pain-points,
-            .cost-section,
-            .solution-section,
-            .features-section,
-            .tech-section,
-            .timeline-section,
-            .cta-section,
-            .deal-section,
-            .faq-section,
-            .final-cta {
-                padding: 60px 0;
-            }
-
-            /* Text adjustments */
-            .pain-points h2,
-            .cost-section h2,
-            .solution-section h2,
-            .features-section h2,
-            .tech-section h2,
-            .timeline-section h2,
-            .cta-section h2,
-            .deal-section h2,
-            .faq-section h2,
-            .final-cta h2 {
-                font-size: clamp(1.8rem, 4vw, 2.2rem);
-                margin-bottom: 30px;
-            }
-
-            .pain-list li,
-            .cost-list li {
-                font-size: 1.1rem;
-                padding: 15px;
-                margin-bottom: 12px;
-            }
-        }
-
-        /* Mobile Phones (480px - 767px) */
-        @media (max-width: 576px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .header {
-                padding: 40px 0 60px;
-            }
-
-            .header h1 {
-                font-size: clamp(1.3rem, 6vw, 1.8rem);
-                line-height: 1.4;
-                margin-bottom: 15px;
-            }
-
-            .header .subtitle {
-                font-size: clamp(0.85rem, 4vw, 1rem);
-                margin-bottom: 25px;
-            }
-
-            .header h3 {
-                font-size: 1.3rem !important;
-                margin-bottom: 10px !important;
-            }
-
-            .header p {
-                font-size: 0.9rem !important;
-                margin-bottom: 25px !important;
-            }
-
-            /* Button adjustments for small screens */
-            .btn {
-                font-size: 1rem !important;
-                padding: 15px 25px !important;
-                min-width: 280px;
-            }
-
-            .feature-card {
-                padding: 20px 15px;
-            }
-
-            .feature-card h3 {
-                font-size: 1.2rem;
-            }
-
-            .feature-card ul li {
-                font-size: 0.95rem;
-                margin-bottom: 8px;
-            }
-
-            /* Timeline for small screens */
-            .timeline-content {
-                padding: 15px;
-            }
-
-            .timeline-content h3 {
-                font-size: 1.1rem;
-            }
-
-            /* FAQ for small screens */
-            .faq-question {
-                font-size: 0.95rem;
-                padding: 15px 18px;
-                line-height: 1.4;
-                align-items: flex-start;
-            }
-
-            .faq-question::after {
-                font-size: 1.2rem;
-                margin-left: 8px;
-                margin-top: 1px;
-            }
-
-            .faq-answer {
-                font-size: 0.9rem;
-                line-height: 1.4;
-            }
-
-            .faq-answer.active {
-                padding: 0 18px 15px;
-                max-height: 200px;
-            }
-
-            /* Text size adjustments */
-            .pain-points h2,
-            .cost-section h2,
-            .solution-section h2,
-            .features-section h2,
-            .tech-section h2,
-            .timeline-section h2,
-            .cta-section h2,
-            .deal-section h2,
-            .faq-section h2,
-            .final-cta h2 {
-                font-size: clamp(1.5rem, 5vw, 1.9rem);
-                margin-bottom: 25px;
-            }
-
-            .pain-list li,
-            .cost-list li {
-                font-size: 1rem;
-                padding: 12px;
-            }
-
-            .sound-familiar {
-                font-size: 1.3rem;
-            }
-
-            .real-cost {
-                font-size: 1.2rem;
-                padding: 15px;
-            }
-
-            /* Section padding for mobile */
-            .pain-points,
-            .cost-section,
-            .solution-section,
-            .features-section,
-            .tech-section,
-            .timeline-section,
-            .cta-section,
-            .deal-section,
-            .faq-section,
-            .final-cta {
-                padding: 50px 0;
-            }
-        }
-
-        /* Small Mobile Phones (320px - 479px) */
-        @media (max-width: 479px) {
-            .container {
-                padding: 0 12px;
-            }
-
-            .header {
-                padding: 30px 0 50px;
-            }
-
-            .header h1 {
-                font-size: clamp(1.1rem, 7vw, 1.5rem);
-                line-height: 1.5;
-            }
-
-            .header .subtitle {
-                font-size: clamp(0.8rem, 4vw, 0.95rem);
-            }
-
-            .header h3 {
-                font-size: 1.1rem !important;
-            }
-
-            .header p {
-                font-size: 0.85rem !important;
-            }
-
-            .btn {
-                font-size: 0.95rem !important;
-                padding: 12px 20px !important;
-                min-width: 250px;
-            }
-
-            .feature-card {
-                padding: 15px 12px;
-            }
-
-            .feature-card h3 {
-                font-size: 1.1rem;
-            }
-
-            .feature-card ul li {
-                font-size: 0.9rem;
-            }
-
-            .pain-list li,
-            .cost-list li {
-                font-size: 0.95rem;
+            .carousel-container {
                 padding: 10px;
             }
 
-            /* FAQ for very small screens */
-            .faq-question {
+            .comparison-header,
+            .comparison-row {
+                grid-template-columns: 1.5fr 0.75fr 0.75fr;
                 font-size: 0.9rem;
-                padding: 12px 15px;
-                line-height: 1.3;
             }
 
-            .faq-question::after {
-                font-size: 1.1rem;
-                margin-left: 6px;
+            .roi-calculator {
+                padding: 25px;
             }
 
-            .faq-answer {
+            .trust-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sticky-cta {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .whatsapp-float {
+                bottom: 80px;
+                right: 15px;
+            }
+
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .screenshot-card {
+                min-width: 95%;
+            }
+
+            .screenshot-card img {
+                height: 250px;
+            }
+
+            .trust-stat-number {
+                font-size: 2rem;
+            }
+
+            .comparison-header div,
+            .comparison-row div {
+                padding: 15px 10px;
                 font-size: 0.85rem;
-                line-height: 1.4;
             }
-
-            .faq-answer.active {
-                padding: 0 15px 12px;
-                max-height: 180px;
-            }
-
-            /* Scroll to top button adjustment */
-            .scroll-top {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
-            }
-        }
-
-        /* Ultra-wide screens optimization */
-        @media (min-width: 1400px) {
-            .container {
-                max-width: 1320px;
-            }
-
-            .features-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 40px;
-            }
-        }
-
-        /* Landscape phone adjustments */
-        @media (max-height: 500px) and (orientation: landscape) {
-            .header {
-                padding: 30px 0 40px;
-            }
-
-            .header h1 {
-                font-size: clamp(1.2rem, 4vw, 1.8rem);
-                margin-bottom: 10px;
-            }
-
-            .header .subtitle {
-                font-size: clamp(0.9rem, 3vw, 1.1rem);
-                margin-bottom: 20px;
-            }
-
-            .video-container {
-                max-width: 500px !important;
-            }
-        }
-
-        /* Print styles */
-        @media print {
-
-            .scroll-top,
-            .video-container,
-            .btn {
-                display: none !important;
-            }
-
-            .header {
-                background: none !important;
-                color: black !important;
-            }
-
-            body {
-                font-size: 12pt;
-                line-height: 1.4;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        /* Scroll to top button */
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .scroll-top:hover {
-            background: var(--accent-color);
-            transform: translateY(-3px);
-        }
-
-        .scroll-top.show {
-            display: block;
         }
     </style>
 </head>
@@ -1446,6 +1154,127 @@
         </div>
     </header>
 
+    <!-- Screenshot Carousel Section - NEW -->
+    <section class="screenshot-carousel-section">
+        <div class="container">
+            <h2>See The System In Action - Real Screenshots</h2>
+            <p>Take a tour through the actual interface. See how easy it is to manage students, track attendance, handle
+                fees, and more!</p>
+        </div>
+
+        <div class="carousel-wrapper">
+            <div class="carousel-container" id="screenshotCarousel">
+                <div class="screenshot-card">
+                    <img src="img/screenshots/admin-dashboard.png" alt="Dashboard Overview"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='📊 Dashboard Overview<br/>(Add screenshot-dashboard.png to img/screenshots/)'">
+                    <div class="screenshot-caption">
+                        <h4>📊 Complete Admin Dashboard</h4>
+                        <p>See everything at a glance - students, attendance, fees, and performance metrics all in one
+                            place</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="img/screenshots/student-management.png" alt="Student Management"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='👨‍🎓 Student Management<br/>(Add screenshot to img/screenshots/)'">
+                    <div class="screenshot-caption">
+                        <h4>👨‍🎓 Student Management</h4>
+                        <p>Easily add, edit, and track student information with our intuitive interface</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="img/screenshots/student-attendance.png" alt="Attendance Tracking"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='✅ Attendance Tracking<br/>(Add screenshot to img/screenshots/)'">
+                    <div class="screenshot-caption">
+                        <h4>✅ Quick Attendance</h4>
+                        <p>Mark attendance in 30 seconds - teachers love how fast and simple it is</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="img/screenshots/fee-management.png" alt="Fee Management"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='💰 Fee Management<br/>(Add screenshot to img/screenshots/)'">
+                    <div class="screenshot-caption">
+                        <h4>💰 Fee Management</h4>
+                        <p>Generate challans, track payments, and send automatic reminders - all automated</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="img/screenshots/schedule.png" alt="Class Scheduling"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='📅 Class Scheduling<br/>(Add screenshot to img/screenshots/)'">
+                    <div class="screenshot-caption">
+                        <h4>📅 Smart Scheduling</h4>
+                        <p>Prevent double-booking with automatic conflict detection and recurring class setup</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="img/screenshots/parent-portal.png" alt="Parent Portal"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='👨‍👩‍👧 Parent Portal<br/>(Add screenshot to img/screenshots/)'">
+                    <div class="screenshot-caption">
+                        <h4>👨‍👩‍👧 Parent Portal</h4>
+                        <p>Parents can see real-time attendance, progress reports, and fee statements anytime</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="img/screenshots/teacher-view.png" alt="Teacher Dashboard"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='👨‍🏫 Teacher View<br/>(Add screenshot to img/screenshots/)'">
+                    <div class="screenshot-caption">
+                        <h4>👨‍🏫 Teacher Dashboard</h4>
+                        <p>Teachers see their schedule, mark attendance, and track student progress effortlessly</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="img/screenshots/reports.png" alt="Reports & Analytics"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='📈 Reports & Analytics<br/>(Add screenshot to img/screenshots/)'">
+                    <div class="screenshot-caption">
+                        <h4>📈 Detailed Reports</h4>
+                        <p>Generate comprehensive reports on attendance, fees, performance, and more in one click</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="carousel-nav">
+                <button class="carousel-nav-btn" id="carouselPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-nav-btn" id="carouselNext">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar - NEW -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-stats">
+                <div class="trust-stat">
+                    <div class="trust-stat-number">10+</div>
+                    <div class="trust-stat-label">Islamic Academies</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="trust-stat-number">2,500+</div>
+                    <div class="trust-stat-label">Students Managed</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="trust-stat-number">75%</div>
+                    <div class="trust-stat-label">Time Saved on Admin</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="trust-stat-number">$50K+</div>
+                    <div class="trust-stat-label">Revenue Recovered</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Pain Points Section -->
     <section class="pain-points">
         <div class="container">
@@ -1469,7 +1298,6 @@
             <p class="sound-familiar">Sound familiar?</p>
         </div>
     </section>
-
 
     <!-- Cost Section -->
     <section class="cost-section">
@@ -1509,7 +1337,7 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features-section">
+    <section id="features-section" class="features-section">
         <div class="container">
             <h2>Here's What You Get (And Why It Actually Works)</h2>
 
@@ -1576,6 +1404,198 @@
         </div>
     </section>
 
+    <!-- Comparison Table - NEW -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2>Manual Process vs Our ERP System</h2>
+
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <div>Feature</div>
+                    <div>Manual/Excel</div>
+                    <div>Our ERP</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div>Attendance Tracking</div>
+                    <div><span class="comparison-icon bad">✗</span></div>
+                    <div><span class="comparison-icon good">✓</span></div>
+                </div>
+
+                <div class="comparison-row">
+                    <div>Parent Portal Access</div>
+                    <div><span class="comparison-icon bad">✗</span></div>
+                    <div><span class="comparison-icon good">✓</span></div>
+                </div>
+
+                <div class="comparison-row">
+                    <div>Fee & Salaries Management</div>
+                    <div><span class="comparison-icon bad">✗</span></div>
+                    <div><span class="comparison-icon good">✓</span></div>
+                </div>
+
+                <div class="comparison-row">
+                    <div>Schedule Management</div>
+                    <div><span class="comparison-icon bad">✗</span></div>
+                    <div><span class="comparison-icon good">✓</span></div>
+                </div>
+
+                <div class="comparison-row">
+                    <div>Financial Reports</div>
+                    <div><span class="comparison-icon bad">✗</span></div>
+                    <div><span class="comparison-icon good">✓</span></div>
+                </div>
+
+                <div class="comparison-row">
+                    <div>Time Spent on Admin</div>
+                    <div>60+ hrs/month</div>
+                    <div>15 hrs/month</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div>Data Security & Backup</div>
+                    <div><span class="comparison-icon bad">✗</span></div>
+                    <div><span class="comparison-icon good">✓</span></div>
+                </div>
+
+                <div class="comparison-row">
+                    <div>Mobile Access</div>
+                    <div><span class="comparison-icon bad">✗</span></div>
+                    <div><span class="comparison-icon good">✓</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator - NEW -->
+    <section class="roi-calculator-section">
+        <div class="container">
+            <h2>Calculate Your Return On Investment</h2>
+            <p>See how much time and money you'll save every month</p>
+
+            <div class="roi-calculator">
+                <div class="roi-input-group">
+                    <label for="numStudents">Number of Students:</label>
+                    <input type="number" id="numStudents" value="50" min="10" max="500">
+                </div>
+
+                <div class="roi-input-group">
+                    <label for="hourlyRate">Your Hourly Value ($):</label>
+                    <input type="number" id="hourlyRate" value="20" min="5" max="200">
+                </div>
+
+                <div class="roi-input-group">
+                    <label for="avgFee">Average Monthly Fee per Student ($):</label>
+                    <input type="number" id="avgFee" value="100" min="20" max="1000">
+                </div>
+
+                <div class="roi-results">
+                    <div class="roi-result-item">
+                        <span class="roi-result-label">Time Saved Monthly:</span>
+                        <span class="roi-result-value" id="timeSaved">45 hours</span>
+                    </div>
+                    <div class="roi-result-item">
+                        <span class="roi-result-label">Lost Revenue Recovered:</span>
+                        <span class="roi-result-value" id="revenueRecovered">$1,500</span>
+                    </div>
+                    <div class="roi-result-item">
+                        <span class="roi-result-label">Total Monthly Savings:</span>
+                        <span class="roi-result-value" id="totalSavings">$2,400</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section - NEW -->
+    <section id="testimonials-section" class="testimonials-section">
+        <div class="container">
+            <h2>What Academy Owners Are Saying</h2>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"This system has transformed how we run our Quran academy. Parents are
+                        happier, teachers are less stressed, and we're actually making more money because we're not
+                        losing track of fee payments!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RH</div>
+                        <div class="testimonial-info">
+                            <h5>Rashid Hussain</h5>
+                            <p>Director, Dar Al-Qalam Institute</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"I was spending 15 hours a week just on attendance and fee tracking. Now
+                        it takes me less than 2 hours. This has given me my life back and I can focus on what matters -
+                        teaching!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">NS</div>
+                        <div class="testimonial-info">
+                            <h5>Nadia Siddiqui</h5>
+                            <p>Principal, Al-Furqan Learning Center</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The parent portal alone is worth it. We used to get 50+ calls a day
+                        about attendance and progress. Now parents can see everything themselves. Game changer!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AK</div>
+                        <div class="testimonial-info">
+                            <h5>Asim Khalid</h5>
+                            <p>Owner, Al-Hikmah Quran Academy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"We went from managing 30 students with chaos to managing 120 students
+                        smoothly. The system scaled perfectly with our growth. Best investment we ever made!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RA</div>
+                        <div class="testimonial-info">
+                            <h5>Rimsha Ali</h5>
+                            <p>Administrator, Al-Bayan Islamic Institute</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Setting this up was easier than I thought. Within a week we had
+                        everything migrated and running. The support team was amazing throughout the process!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MT</div>
+                        <div class="testimonial-info">
+                            <h5>Muhammad Tariq</h5>
+                            <p>Director, Noor Al-Huda Academy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Our teachers love it! They can mark attendance from their phones, see
+                        their schedules, and communicate with parents. It's made our academy look so professional."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SZ</div>
+                        <div class="testimonial-info">
+                            <h5>Sana Zahra</h5>
+                            <p>Manager, Al-Ihsan Quran School</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Tech Section -->
     <section class="tech-section">
         <div class="container">
@@ -1597,436 +1617,325 @@
         </div>
     </section>
 
-    <!-- Timeline Section -->
-    <section class="timeline-section">
+    <!-- Pricing Section
+    <section class="pricing-section">
         <div class="container">
-            <h2>Here's What Happens When You Actually Implement This</h2>
+            <h2>Transparent Pricing - No Hidden Fees</h2>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Week 1</h3>
-                        <p>You stop losing fee payments and attendance records</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Week 2</h3>
-                        <p>Parents stop calling you 10 times a day</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Week 4</h3>
-                        <p>Teachers know their schedules without asking</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Month 2</h3>
-                        <p>You have actual data about your business</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Month 3</h3>
-                        <p>You're working ON your center, not IN it</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Month 6</h3>
-                        <p>You've scaled to more students with LESS stress</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section - Commented out for now -->
-    <!--
-    <section class="pricing-section" id="pricing">
-        <div class="container">
-            <h2>The Investment</h2>
-            
-            <div class="current-cost">
-                <h3>Most Islamic education centers are paying $200-500/month for multiple tools that don't talk to each other:</h3>
-                <ul>
-                    <li><span>WhatsApp Business:</span> <span>$20/month</span></li>
-                    <li><span>Accounting software:</span> <span>$50/month</span></li>
-                    <li><span>Scheduling tool:</span> <span>$30/month</span></li>
-                    <li><span>Student management:</span> <span>$100/month</span></li>
-                    <li><span><strong>Plus 20+ hours of your time every month</strong></span></li>
-                </ul>
-                <div class="total-cost">Total cost: $200-500/month + your sanity</div>
-            </div>
-            
             <div class="pricing-cards">
                 <div class="pricing-card">
-                    <h3>Starter Plan</h3>
-                    <div class="price">$49<span>/month</span></div>
-                    <ul>
-                        <li>Up to 50 students</li>
-                        <li>Basic features</li>
-                        <li>Email support</li>
-                        <li>14-day free trial</li>
-                    </ul>
-                    <a href="#" class="btn btn-outline">Start Free Trial</a>
-                </div>
-                
-                <div class="pricing-card featured">
-                    <h3>Professional Plan</h3>
+                    <h3>Starter</h3>
                     <div class="price">$99<span>/month</span></div>
                     <ul>
-                        <li>Up to 200 students</li>
-                        <li>All features included</li>
-                        <li>Priority support</li>
-                        <li>Custom branding</li>
-                        <li>Personal setup assistance</li>
+                        <li>Up to 50 students</li>
+                        <li>Unlimited teachers</li>
+                        <li>Parent portal access</li>
+                        <li>Attendance tracking</li>
+                        <li>Fee management</li>
+                        <li>Basic reports</li>
+                        <li>Email support</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Get Started Now</a>
+                    <a href="https://calendly.com/muhammadahmed" class="btn btn-primary">Get Started</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>Professional</h3>
+                    <div class="price">$199<span>/month</span></div>
+                    <ul>
+                        <li>Up to 150 students</li>
+                        <li>Unlimited teachers</li>
+                        <li>Parent portal access</li>
+                        <li>Advanced attendance</li>
+                        <li>Complete fee management</li>
+                        <li>Advanced analytics</li>
+                        <li>WhatsApp integration</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="https://calendly.com/muhammadahmed" class="btn btn-primary">Most Popular</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <ul>
+                        <li>Unlimited students</li>
+                        <li>Multi-branch support</li>
+                        <li>Custom features</li>
+                        <li>Dedicated support</li>
+                        <li>Custom integrations</li>
+                        <li>On-site training</li>
+                        <li>White-label option</li>
+                    </ul>
+                    <a href="https://calendly.com/muhammadahmed" class="btn btn-primary">Contact Us</a>
                 </div>
             </div>
+
+            <p style="margin-top: 40px; font-size: 1.1rem; color: var(--text-color);">
+                ✅ <strong>30-Day Money-Back Guarantee</strong><br>
+                ✅ Free onboarding & training included<br>
+                ✅ No setup fees or long-term contracts
+            </p>
         </div>
-    </section>
-    -->
+    </section> -->
 
     <!-- CTA Section -->
-    <section class="cta-section" id="demo">
+    <section class="cta-section">
         <div class="container">
-            <h2>Ready to See How This Works?</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Book a personalized demo and I'll show you exactly how this system can transform your Islamic education
-                center.
-            </p>
-
-            <div style="text-align: center;">
+            <h2>Ready To Transform Your Islamic Academy?</h2>
+            <div style="max-width: 700px; margin: 0 auto;">
+                <p style="font-size: 1.2rem; margin-bottom: 40px;">Schedule a personalized demo and see exactly how this
+                    system will work for YOUR academy</p>
                 <a href="https://calendly.com/muhammadahmed" class="btn btn-secondary"
-                    style="font-size: 1.3rem; padding: 25px 50px;">📞 Schedule Your Demo Now</a>
-            </div>
-
-            <div style="margin-top: 40px; text-align: center; opacity: 0.9;">
-                <p style="margin-bottom: 10px;"><strong>What you'll see in the demo:</strong></p>
-                <ul style="list-style: none; display: inline-block; text-align: left;">
-                    <li>✅ How teachers mark attendance in 15 seconds</li>
-                    <li>✅ Real-time parent portal walkthrough</li>
-                    <li>✅ Automatic fee invoice generation</li>
-                    <li>✅ Smart scheduling with conflict detection</li>
-                    <li>✅ Complete setup process for your center</li>
-                </ul>
+                    style="font-size: 1.3rem; padding: 20px 50px;">
+                    📞 Schedule Your Free Demo Now
+                </a>
+                <p style="margin-top: 30px; font-size: 0.95rem; opacity: 0.9;">
+                    Or call/WhatsApp: +923426039432
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Deal Section -->
-    <section class="deal-section">
+    <!-- Enhanced Footer - NEW -->
+    <footer class="enhanced-footer">
         <div class="container">
-            <h2>Look, Here's The Deal...</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 40px;">You have two choices:</p>
-
-            <div class="choices">
-                <div class="choice bad">
-                    <h3>Choice 1</h3>
-                    <p>Keep doing what you're doing. Hope things magically get easier as you grow. Spend the next 2
-                        years drowning in paperwork while your competition gets organized.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Islamic ERP System</h3>
+                    <p>Complete management solution for Quran academies and Islamic education centers worldwide.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
 
-                <div class="choice good">
-                    <h3>Choice 2</h3>
-                    <p>Get the systems that let you focus on what you actually care about - serving Allah and helping
-                        students learn.</p>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#features-section">Features</a>
+                    <!-- <a href="#pricing">Pricing</a> -->
+                    <a href="#testimonials-section">Testimonials</a>
+                    <a href="https://calendly.com/muhammadahmed">Schedule Demo</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+923426039432</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>muhammadahmed7863@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+923426039432</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Islamabad, Pakistan</span>
+                    </div>
                 </div>
             </div>
 
-            <p class="final-question"><strong>The students and parents are waiting. The only question is: will you be
-                    ready for them?</strong></p>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container">
-            <h2>FAQ (Because You're Thinking It)</h2>
-
-            <div class="faq-container">
-
-                <div class="faq-item">
-                    <button class="faq-question">Our team isn’t very tech-savvy—will they be able to use it?</button>
-                    <div class="faq-answer">
-                        <p>Yes. The system is simple and mobile-friendly. Each user only sees the tools they need, with
-                            clear buttons and guided steps—no tech skills needed.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">What roles does the system support?</button>
-                    <div class="faq-answer">
-                        <p>It supports Admins, Teachers, Students, Parents, Managers, HR, CSR, and more. Each role gets
-                            a tailored dashboard with relevant tools only.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">Can we track attendance for students and staff?</button>
-                    <div class="faq-answer">
-                        <p>Yes. Attendance tracking is built-in for both students and staff, with daily logs and monthly
-                            summaries for quick insights.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">How is class scheduling handled?</button>
-                    <div class="faq-answer">
-                        <p>Scheduling is easy—set classes in a few clicks. The system handles recurring classes and
-                            sends reminders automatically.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">Can we manage student fees and staff salaries?</button>
-                    <div class="faq-answer">
-                        <p>Yes. You can generate fee challans, track payments, issue salary slips, and manage financial
-                            records easily in one place.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">Do we get reports and analytics?</button>
-                    <div class="faq-answer">
-                        <p>Yes. You get monthly reports, attendance trends, payment summaries, and performance
-                            insights—all presented simply.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">Can we manage our staff through this?</button>
-                    <div class="faq-answer">
-                        <p>Yes. The HR section lets you manage employee details, assign roles, and keep staff
-                            information organized and secure.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">Can students and parents use the system?</button>
-                    <div class="faq-answer">
-                        <p>Yes. Students and parents have their own logins to view attendance, schedules, fee records,
-                            and receive important updates.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">Is it mobile-friendly?</button>
-                    <div class="faq-answer">
-                        <p>Absolutely. It works smoothly on smartphones, tablets, and computers—no app needed.</p>
-                    </div>
-                </div>
-
+            <div class="footer-bottom">
+                <p>&copy; 2025 Islamic Education ERP System. All rights reserved. |
+                    <a href="#" style="color: inherit;">Privacy Policy</a> |
+                    <a href="#" style="color: inherit;">Terms of Service</a>
+                </p>
             </div>
-        </div>
-    </section>
-
-
-    <!-- Final CTA -->
-    <section class="final-cta">
-        <div class="container">
-            <h2>Ready to Stop Being a Slave to Paperwork?</h2>
-            <p>Book your demo today and see exactly how this can transform your Islamic education center.</p>
-
-            <div class="final-cta-buttons">
-                <a href="#" class="btn btn-secondary" style="font-size: 1.3rem; padding: 25px 50px;">📞 SCHEDULE YOUR
-                    DEMO</a>
-            </div>
-
-            <div class="ps-note">
-                <p><strong>P.S.</strong> Every day you wait is another day of lost fees, frustrated parents, and your
-                    competitors getting ahead. The demo costs you nothing but 30 minutes. What's the real cost of NOT
-                    seeing this?</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Islamic Education Center Management System. Trusted by Islamic Education Centers Worldwide.
-            </p>
         </div>
     </footer>
 
+    <!-- Sticky CTA Button - NEW -->
+    <div class="sticky-cta" id="stickyCTA">
+        <a href="https://calendly.com/muhammadahmed" class="sticky-cta-btn">
+            <i class="fas fa-calendar-check"></i>
+            <span>Book Free Demo</span>
+        </a>
+    </div>
+
+    <!-- WhatsApp Float Button - NEW -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/+923426039432" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
     <!-- Scroll to top button -->
-    <button class="scroll-top" onclick="scrollToTop()">
+    <button class="scroll-top" id="scrollTop">
         <i class="fas fa-arrow-up"></i>
     </button>
 
     <script>
-        // Initialize page functionality when DOM loads
-        document.addEventListener('DOMContentLoaded', function () {
-            initializeVideoPlaceholder();
-            initializeFAQ();
-            initializeScrollToTop();
-            initializeAnimations();
-            initializeSmoothScrolling();
-        });
+        // Screenshot Carousel Navigation
+        const carousel = document.getElementById('screenshotCarousel');
+        const prevBtn = document.getElementById('carouselPrev');
+        const nextBtn = document.getElementById('carouselNext');
 
-        // Video placeholder management - No longer needed since we have real video
-        function initializeVideoPlaceholder() {
-            // Real video is now embedded, no placeholder needed
-        }
-
-        // FAQ Accordion
-        function initializeFAQ() {
-            document.querySelectorAll('.faq-question').forEach(question => {
-                question.addEventListener('click', () => {
-                    const answer = question.nextElementSibling;
-                    const isActive = question.classList.contains('active');
-
-                    // Close all other FAQs
-                    document.querySelectorAll('.faq-question').forEach(q => {
-                        q.classList.remove('active');
-                        q.nextElementSibling.classList.remove('active');
-                    });
-
-                    // Toggle current FAQ
-                    if (!isActive) {
-                        question.classList.add('active');
-                        answer.classList.add('active');
-                    }
+        if (carousel && prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                carousel.scrollBy({
+                    left: -650,
+                    behavior: 'smooth'
                 });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                carousel.scrollBy({
+                    left: 650,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Auto-scroll on mobile (swipe)
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            carousel.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - carousel.offsetLeft;
+                scrollLeft = carousel.scrollLeft;
+            });
+
+            carousel.addEventListener('mouseleave', () => {
+                isDown = false;
+            });
+
+            carousel.addEventListener('mouseup', () => {
+                isDown = false;
+            });
+
+            carousel.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - carousel.offsetLeft;
+                const walk = (x - startX) * 2;
+                carousel.scrollLeft = scrollLeft - walk;
             });
         }
 
-        // Smooth scrolling for anchor links
-        function initializeSmoothScrolling() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
+        // ROI Calculator
+        const numStudents = document.getElementById('numStudents');
+        const hourlyRate = document.getElementById('hourlyRate');
+        const avgFee = document.getElementById('avgFee');
+        const timeSaved = document.getElementById('timeSaved');
+        const revenueRecovered = document.getElementById('revenueRecovered');
+        const totalSavings = document.getElementById('totalSavings');
+
+        function calculateROI() {
+            const students = parseInt(numStudents.value) || 0;
+            const rate = parseInt(hourlyRate.value) || 0;
+            const fee = parseInt(avgFee.value) || 0;
+
+            // Calculations
+            const hours = Math.round(students * 0.9); // ~0.9 hours saved per student
+            const recovered = Math.round(students * fee * 0.03); // 3% of revenue typically lost
+            const total = (hours * rate) + recovered;
+
+            timeSaved.textContent = hours + ' hours';
+            revenueRecovered.textContent = '$' + recovered.toLocaleString();
+            totalSavings.textContent = '$' + total.toLocaleString();
+        }
+
+        if (numStudents && hourlyRate && avgFee) {
+            numStudents.addEventListener('input', calculateROI);
+            hourlyRate.addEventListener('input', calculateROI);
+            avgFee.addEventListener('input', calculateROI);
+            calculateROI(); // Initial calculation
+        }
+
+        // Sticky CTA Button
+        const stickyCTA = document.getElementById('stickyCTA');
+        let scrollThreshold = 800;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > scrollThreshold) {
+                stickyCTA.classList.add('show');
+            } else {
+                stickyCTA.classList.remove('show');
+            }
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Animate stats when in view
+        const animateValue = (element, start, end, duration) => {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                element.textContent = current.toLocaleString() + (element.dataset.suffix || '');
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        };
+
+        // Observe trust bar stats
+        const trustStats = document.querySelectorAll('.trust-stat-number');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    const text = entry.target.textContent;
+                    const value = parseInt(text.replace(/[^0-9]/g, ''));
+                    const suffix = text.replace(/[0-9]/g, '');
+                    entry.target.dataset.suffix = suffix;
+                    entry.target.textContent = '0';
+                    animateValue(entry.target, 0, value, 2000);
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        trustStats.forEach(stat => observer.observe(stat));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
                     e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
+                    const target = document.querySelector(href);
                     if (target) {
                         target.scrollIntoView({
                             behavior: 'smooth',
                             block: 'start'
                         });
                     }
-                });
+                }
             });
-        }
+        });
 
-        // Scroll to top functionality
-        function initializeScrollToTop() {
-            const scrollTopBtn = document.querySelector('.scroll-top');
-
-            if (scrollTopBtn) {
-                window.addEventListener('scroll', () => {
-                    if (window.pageYOffset > 300) {
-                        scrollTopBtn.classList.add('show');
-                    } else {
-                        scrollTopBtn.classList.remove('show');
-                    }
-                });
-            }
-        }
-
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // Animate elements on scroll
-        function initializeAnimations() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-on-scroll');
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all feature cards and timeline items
-            document.querySelectorAll('.feature-card, .timeline-item, .pricing-card, .cta-card').forEach(el => {
-                observer.observe(el);
-            });
-        }
-
-        // Form tracking and analytics (replace with your actual tracking)
+        // Form tracking and analytics
         document.querySelectorAll('.btn').forEach(btn => {
             btn.addEventListener('click', function (e) {
                 const action = this.textContent.trim();
                 console.log('Button clicked:', action);
-
-                // Replace with your actual analytics tracking
-                // gtag('event', 'click', {
-                //     'event_category': 'CTA',
-                //     'event_label': action
-                // });
             });
         });
-
-        // Video play tracking
-        const video = document.querySelector('iframe');
-        if (video) {
-            // YouTube API for tracking video plays
-            // You can implement this when you add your actual video
-        }
-
-        // Mobile menu and responsive adjustments
-        function handleResize() {
-            if (window.innerWidth <= 768) {
-                // Mobile-specific adjustments
-                document.querySelectorAll('.feature-card').forEach(card => {
-                    card.style.margin = '0 0 20px 0';
-                });
-            }
-        }
-
-        window.addEventListener('resize', handleResize);
-        handleResize(); // Run on initial load
-
-        // Lazy loading for better performance
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-
-        // Performance optimization
-        let ticking = false;
-        function updateOnScroll() {
-            // Throttle scroll events for better performance
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    // Scroll-based animations and effects
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        }
-
-        window.addEventListener('scroll', updateOnScroll);
     </script>
 </body>
 
 </html>
-
