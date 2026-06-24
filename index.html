@@ -1,0 +1,2867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5">
+    <meta name="description" content="Quran Academy ERP - Complete educational institution management system for Islamic schools">
+    <meta property="og:title" content="Quran Academy ERP - Islamic School Management System">
+    <meta property="og:description" content="All-in-One ERP built for Islamic educational institutions. Automate payroll, billing, scheduling, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://demo.empiredigisol.com">
+    <meta property="og:image" content="https://demo.empiredigisol.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quran Academy ERP">
+    <meta name="twitter:description" content="All-in-One ERP for Islamic educational institutions">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+    <title>Quran Academy ERP - Complete Educational Institution Management System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Color Scheme */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-light: #3b82f6;
+            --secondary: #059669;
+            --accent: #f59e0b;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --border: #e5e7eb;
+        }
+
+        /* Header Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo:before {
+            content: "📚";
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        .menu-toggle.active {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .cta-button:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        .whatsapp-nav {
+            background: #25D366;
+            color: white;
+            padding: 0.5rem 1rem 0.5rem 0.75rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);
+        }
+
+        .nav-links a.whatsapp-nav:hover {
+            color: white;
+            background: #1da851;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+        }
+
+        .whatsapp-nav:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .cta-button-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .cta-button-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 6rem 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .hero .cta-button {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+
+        .trust-badges {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-top: 2rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-alt {
+            background: var(--light);
+        }
+
+        /* Cards Grid */
+        .grid {
+            display: grid;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        .card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Problem Statement */
+        .problem-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .problem-item::before {
+            content: '✗';
+            font-size: 1.5rem;
+            color: #ef4444;
+            font-weight: bold;
+            min-width: 30px;
+        }
+
+        .problem-item p {
+            color: var(--gray);
+        }
+
+        /* Portals Overview */
+        .portal-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            border: 2px solid var(--border);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .portal-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.2);
+        }
+
+        .portal-card:focus-visible,
+        .faq-question:focus-visible,
+        .tab-btn:focus-visible,
+        .carousel-nav-btn:focus-visible,
+        .demo-close:focus-visible,
+        .submit-btn:focus-visible,
+        .screenshot-card:focus-visible,
+        .video-testimonial-card:focus-visible,
+        .menu-toggle:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .portal-card.active {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(37, 99, 235, 0.1));
+        }
+
+        .portal-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portal-card h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .portal-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .portal-details {
+            background: var(--light);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .portal-details.show {
+            display: block;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .portal-details h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .portal-details ul {
+            list-style: none;
+            columns: 2;
+            gap: 2rem;
+        }
+
+        .portal-details li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--gray);
+        }
+
+        .portal-details li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Modules Tabs */
+        .tab-nav {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background: transparent;
+            color: var(--gray);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+            position: relative;
+            bottom: -1rem;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .module-content {
+            background: var(--light);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .module-content h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .module-content ul {
+            list-style: none;
+        }
+
+        .module-content li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--gray);
+        }
+
+        .module-content li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .module-image {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        /* ROI Calculator */
+        .calculator {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            max-width: 700px;
+            margin: 2rem auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .calculator-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .calculator-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .calculator-group input,
+        .calculator-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border 0.3s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .calculator-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 12px;
+            padding-right: 2.5rem;
+            cursor: pointer;
+        }
+
+        .calculator-group input:focus,
+        .calculator-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .results {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .results.show {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .result-item h4 {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        /* Comparison Table */
+        .comparison-wrapper {
+            overflow-x: auto;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background: var(--dark);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        tr:hover {
+            background: var(--light);
+        }
+
+        .check {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .close {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--dark);
+            transition: background 0.3s;
+            background: white;
+        }
+
+        .faq-question:hover {
+            background: var(--light);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: var(--light);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1.5rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--light);
+        }
+        .testimonials-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .testimonials-grid .testimonial-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            text-align: left;
+            display: block;
+        }
+        .testimonials-grid .testimonial-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+        }
+        .testimonial-stars {
+            color: var(--accent);
+            font-size: 1.1rem;
+            letter-spacing: 0.15rem;
+            margin-bottom: 0.75rem;
+        }
+        .testimonials-grid .testimonial-text {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+        .testimonials-grid .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        .testimonials-grid .testimonial-info h5 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 0;
+        }
+        .testimonials-grid .testimonial-info p {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        /* Video Testimonials */
+        .video-testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5% 5rem;
+        }
+        .video-testimonial-card {
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+        }
+        .video-aspect-ratio {
+            position: relative;
+            width: 100%;
+            background: #f0f0f0;
+        }
+        .video-aspect-ratio.aspect-portrait {
+            aspect-ratio: 9 / 16;
+            max-height: 500px;
+        }
+        .video-aspect-ratio video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .video-testimonial-card .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.25rem;
+        }
+        .video-testimonial-card .testimonial-info h5 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 0;
+        }
+        .video-testimonial-card .testimonial-info p {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        /* Lead Capture Form */
+        .form-container {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 2.5rem;
+            max-width: 600px;
+            margin: 2rem auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border 0.3s;
+            -webkit-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 12px;
+            padding-right: 2.5rem;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="number"],
+        .form-group input[type="radio"],
+        .form-group input[type="checkbox"] {
+            background-image: none;
+            padding-right: 0.75rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group input[type="radio"],
+        .form-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.5rem;
+            cursor: pointer;
+            min-width: 18px;
+            min-height: 18px;
+            border: none;
+            padding: 0;
+            -webkit-appearance: auto;
+            appearance: auto;
+        }
+
+        .form-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d1fae5;
+            color: #065f46;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            display: block;
+        }
+
+        /* Case Studies */
+        .case-study {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .case-study h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .case-study-meta {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .case-study p {
+            margin-bottom: 0.75rem;
+            color: var(--gray);
+        }
+
+        .case-study-results {
+            background: var(--light);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .case-study-results h5 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .result-list {
+            list-style: none;
+        }
+
+        .result-list li {
+            padding: 0.25rem 0 0.25rem 1.5rem;
+            position: relative;
+            color: var(--gray);
+        }
+
+        .result-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 5%;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a,
+        .footer-section p {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            nav {
+                padding: 1rem 3%;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: 0;
+                top: 60px;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                align-items: stretch;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                max-height: 400px;
+            }
+
+            .nav-links li {
+                padding: 1rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links a,
+            .nav-links .cta-button {
+                display: block;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .module-content {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .portal-details ul {
+                columns: 1;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .tab-nav {
+                gap: 0.2rem;
+                overflow-x: auto;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+            .tab-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+                white-space: nowrap;
+                border: 1px solid var(--border);
+                border-radius: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .tab-btn.active {
+                background: var(--primary);
+                color: white;
+                border-color: var(--primary);
+            }
+
+            .hero::before,
+            .hero::after {
+                width: 200px;
+                height: 200px;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .results.show {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .result-value {
+                font-size: 1.3rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .video-testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .comparison-wrapper {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 3rem 5%;
+            }
+
+            .section {
+                padding: 3rem 5%;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .form-container {
+                padding: 1.5rem;
+            }
+
+            .module-content {
+                padding: 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .logo:before {
+                font-size: 1.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero .cta-button {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .nav-links {
+                top: 55px;
+            }
+
+            .calculator {
+                padding: 1.5rem;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 0.65rem;
+                font-size: 16px;
+            }
+
+            .result-item h4 {
+                font-size: 0.8rem;
+            }
+
+            .result-value {
+                font-size: 1.1rem;
+            }
+
+            .results.show {
+                grid-template-columns: 1fr;
+            }
+
+            .tab-nav {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+            }
+
+            .tab-btn {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.75rem;
+                white-space: nowrap;
+            }
+
+            .portal-card {
+                padding: 1rem;
+            }
+
+            .portal-icon {
+                font-size: 2rem;
+            }
+
+            .portal-card h4 {
+                font-size: 0.95rem;
+            }
+
+            .portal-details {
+                padding: 1.5rem;
+            }
+
+            .portal-details h4 {
+                font-size: 1.1rem;
+            }
+
+            .portal-details li {
+                padding-left: 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .case-study {
+                padding: 1.5rem;
+            }
+
+            .testimonial-text {
+                font-size: 0.95rem;
+            }
+
+            .faq-item {
+                margin-bottom: 0.75rem;
+            }
+
+            .faq-question {
+                padding: 1rem;
+                font-size: 0.95rem;
+            }
+
+            .faq-question::after {
+                font-size: 1.2rem;
+            }
+
+            .faq-item.active .faq-answer {
+                max-height: 600px;
+                padding: 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .submit-btn {
+                padding: 0.875rem;
+                font-size: 0.95rem;
+            }
+
+            table {
+                font-size: 0.75rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+
+            .check, .close {
+                font-size: 1rem;
+            }
+
+            .grid {
+                gap: 1rem;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .card-icon {
+                font-size: 2.5rem;
+            }
+
+            .card h3 {
+                font-size: 1.1rem;
+            }
+
+            .card p {
+                font-size: 0.9rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .trust-badges {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero h1 {
+                font-size: 1.2rem;
+                line-height: 1.3;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .logo {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 0.65rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .card-icon {
+                font-size: 2rem;
+            }
+
+            .portal-icon {
+                font-size: 1.5rem;
+            }
+
+            .result-value {
+                font-size: 1rem;
+            }
+
+            .submit-btn {
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Screenshot Carousel */
+        .screenshot-carousel-section {
+            padding: 5rem 5% 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .screenshot-carousel-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+        .screenshot-carousel-section > .container > p {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+        .carousel-wrapper {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .carousel-container {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 1rem 0.5rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) var(--border);
+        }
+        .carousel-container::-webkit-scrollbar {
+            height: 6px;
+        }
+        .carousel-container::-webkit-scrollbar-track {
+            background: var(--border);
+            border-radius: 3px;
+        }
+        .carousel-container::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 3px;
+        }
+        .screenshot-card {
+            flex: 0 0 320px;
+            scroll-snap-align: start;
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        .screenshot-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        .screenshot-caption {
+            padding: 1.25rem;
+        }
+        .screenshot-caption h4 {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+            color: var(--dark);
+        }
+        .screenshot-caption p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.5;
+            margin: 0;
+        }
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .carousel-nav-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-nav-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        .trust-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .trust-stat {
+            text-align: center;
+        }
+        .trust-stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .trust-stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 0.25rem;
+        }
+        @media (max-width: 768px) {
+            .screenshot-carousel-section h2 {
+                font-size: 1.8rem;
+            }
+            .screenshot-card {
+                flex: 0 0 260px;
+            }
+            .trust-stats {
+                gap: 2rem;
+            }
+            .trust-stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Demo Video Modal */
+        .demo-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .demo-overlay.show {
+            display: flex;
+        }
+        .demo-modal {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .demo-modal iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .demo-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            line-height: 1;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        .demo-close:hover {
+            opacity: 1;
+        }
+        @media (max-width: 480px) {
+            .demo-overlay {
+                padding: 1rem;
+            }
+            .demo-close {
+                top: -35px;
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Loading State */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <a href="/" class="logo">Quran Academy ERP</a>
+            <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#modules">Modules</a></li>
+                <li><a href="#roi">ROI</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><button class="cta-button" onclick="scrollToForm()">Start Free Trial</button></li>
+                <li><a href="https://wa.me/923426039432?text=Assalam-o-Alaikum!%20I'm%20interested%20in%20Quran%20Academy%20ERP.%20Can%20you%20share%20more%20details%3F" target="_blank" class="whatsapp-nav" aria-label="Contact on WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>All-in-One ERP Built for Islamic Educational Institutions</h1>
+            <p>Automate payroll, billing, and scheduling. Real-time dashboards for admins, teachers, and parents.</p>
+            <div class="hero-buttons">
+                <button class="cta-button" onclick="scrollToForm()">Start Free Trial</button>
+                <button class="cta-button cta-button-secondary" onclick="openDemoModal()">Complete Demo of ERP</button>
+            </div>
+            <div class="trust-badges">
+                <p>✓ 7-day free trial • ✓ No credit card required • ✓ Full feature access</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Statement -->
+    <section class="section">
+        <h2 class="section-title">Are You Still Managing Your Institution Manually?</h2>
+        <p class="section-subtitle">Common challenges Islamic schools face without proper management software</p>
+        <div class="container">
+            <div class="grid grid-3">
+                <div class="problem-item">
+                    <p><strong>Spending hours on attendance & payroll</strong><br>Manual tracking consumes valuable admin time daily</p>
+                </div>
+                <div class="problem-item">
+                    <p><strong>No real-time visibility</strong><br>Can't instantly see student progress or attendance</p>
+                </div>
+                <div class="problem-item">
+                    <p><strong>Parents constantly asking about fees</strong><br>No transparency into billing and payment status</p>
+                </div>
+                <div class="problem-item">
+                    <p><strong>Missed schedules & rescheduling chaos</strong><br>Complex class patterns lead to conflicts</p>
+                </div>
+                <div class="problem-item">
+                    <p><strong>No data for decision-making</strong><br>Can't analyze trends or measure performance</p>
+                </div>
+                <div class="problem-item">
+                    <p><strong>Staff frustration over delays</strong><br>Teachers & staff wait weeks for salary updates</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-stats">
+                <div class="trust-stat">
+                    <div class="trust-stat-number">10+</div>
+                    <div class="trust-stat-label">Islamic Academies</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="trust-stat-number">1200+</div>
+                    <div class="trust-stat-label">Students Managed</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="trust-stat-number">75%</div>
+                    <div class="trust-stat-label">Time Saved on Admin</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9 Portals Overview -->
+    <section class="section section-alt">
+        <h2 class="section-title">9 Specialized Portals - One System</h2>
+        <p class="section-subtitle">Each role gets exactly what they need, nothing more</p>
+        <div class="container">
+            <div class="grid grid-3">
+                <div class="portal-card" onclick="showPortalDetails(0)" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); showPortalDetails(0); }">
+                    <div class="portal-icon">👨‍💼</div>
+                    <h4>Admin Portal</h4>
+                    <p>Full system control</p>
+                </div>
+                <div class="portal-card" onclick="showPortalDetails(1)" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); showPortalDetails(1); }">
+                    <div class="portal-icon">📊</div>
+                    <h4>Manager Portal</h4>
+                    <p>Team operations</p>
+                </div>
+                <div class="portal-card" onclick="showPortalDetails(2)" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); showPortalDetails(2); }">
+                    <div class="portal-icon">📖</div>
+                    <h4>Supervisor - Quran</h4>
+                    <p>Academic oversight</p>
+                </div>
+                <div class="portal-card" onclick="showPortalDetails(3)" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); showPortalDetails(3); }">
+                    <div class="portal-icon">📚</div>
+                    <h4>Supervisor - Subjects</h4>
+                    <p>Subject oversight</p>
+                </div>
+                <div class="portal-card" onclick="showPortalDetails(4)" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); showPortalDetails(4); }">
+                    <div class="portal-icon">👨‍🏫</div>
+                    <h4>Teacher Portal</h4>
+                    <p>Class instruction</p>
+                </div>
+                <div class="portal-card" onclick="showPortalDetails(5)" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); showPortalDetails(5); }">
+                    <div class="portal-icon">👨‍👩‍👧</div>
+                    <h4>Parent Portal</h4>
+                    <p>Child monitoring</p>
+                </div>
+                <div class="portal-card" onclick="showPortalDetails(6)" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); showPortalDetails(6); }">
+                    <div class="portal-icon">💼</div>
+                    <h4>HR Portal</h4>
+                    <p>Recruitment</p>
+                </div>
+                <div class="portal-card" onclick="showPortalDetails(7)" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); showPortalDetails(7); }">
+                    <div class="portal-icon">📞</div>
+                    <h4>CSR Portal</h4>
+                    <p>Lead management</p>
+                </div>
+                <div class="portal-card" onclick="showPortalDetails(8)" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); showPortalDetails(8); }">
+                    <div class="portal-icon">🔧</div>
+                    <h4>Office Staff Portal</h4>
+                    <p>Support functions</p>
+                </div>
+            </div>
+
+            <!-- Portal Details -->
+            <div id="portal-details-0" class="portal-details">
+                <h4>Admin Portal - Full System Control</h4>
+                <ul>
+                    <li>User Management (all roles)</li>
+                    <li>Schedule Management</li>
+                    <li>Fee & Salary Management</li>
+                    <li>Attendance Oversight</li>
+                    <li>Analytics & Reporting</li>
+                    <li>System Permissions</li>
+                    <li>Tax Report Generation</li>
+                    <li>Expense Tracking</li>
+                </ul>
+            </div>
+            <div id="portal-details-1" class="portal-details">
+                <h4>Manager Portal - Team Operations</h4>
+                <ul>
+                    <li>User Management</li>
+                    <li>Schedule Management</li>
+                    <li>Fee Challan Processing</li>
+                    <li>Salary Invoice Management</li>
+                    <li>Attendance Management</li>
+                    <li>Announcements</li>
+                    <li>Team Performance Viewing</li>
+                    <li>Permission Customization</li>
+                </ul>
+            </div>
+            <div id="portal-details-2" class="portal-details">
+                <h4>Supervisor - Quran - Academic Oversight</h4>
+                <ul>
+                    <li>Monitor Quran Teachers</li>
+                    <li>Monitor Students</li>
+                    <li>View Class Schedules</li>
+                    <li>Attendance by Subject</li>
+                    <li>Teacher Performance</li>
+                    <li>Dashboard Statistics</li>
+                    <li>Lesson Viewing</li>
+                    <li>Monthly Reports Access</li>
+                </ul>
+            </div>
+            <div id="portal-details-3" class="portal-details">
+                <h4>Supervisor - Subjects - Quality Assurance</h4>
+                <ul>
+                    <li>Monitor Subject Teachers</li>
+                    <li>Monitor Students</li>
+                    <li>View Class Schedules</li>
+                    <li>Attendance by Subject</li>
+                    <li>Teacher Performance</li>
+                    <li>Dashboard Statistics</li>
+                    <li>Lesson Viewing</li>
+                    <li>Monthly Reports Access</li>
+                </ul>
+            </div>
+            <div id="portal-details-4" class="portal-details">
+                <h4>Teacher Portal - Class Instruction</h4>
+                <ul>
+                    <li>View Assigned Students</li>
+                    <li>Personal Schedule</li>
+                    <li>Mark Attendance</li>
+                    <li>Submit Monthly Reports</li>
+                    <li>Upload Lesson Materials</li>
+                    <li>View Salary Invoices</li>
+                    <li>Own Attendance Records</li>
+                    <li>Real-time Class Tracking</li>
+                </ul>
+            </div>
+            <div id="portal-details-5" class="portal-details">
+<h4>Parent Portal - Child Monitoring</h4>
+                    <ul>
+                        <li>Monitor Multiple Children</li>
+                    <li>View Student Schedules</li>
+                    <li>Attendance Tracking</li>
+                    <li>Monthly Teacher Reports</li>
+                    <li>Fee Invoice Viewing</li>
+                    <li>Payment History</li>
+                    <li>Performance Metrics</li>
+                    <li>Dashboard Overview</li>
+                </ul>
+            </div>
+            <div id="portal-details-6" class="portal-details">
+                <h4>HR Portal - Recruitment Pipeline</h4>
+                <ul>
+                    <li>Create Job Candidates</li>
+                    <li>Search & Filter</li>
+                    <li>Manage Decisions</li>
+                    <li>Candidate Tracking</li>
+                    <li>Decision Workflow</li>
+                    <li>HR Metrics Dashboard</li>
+                    <li>Selection Tracking</li>
+                    <li>Candidate History</li>
+                </ul>
+            </div>
+            <div id="portal-details-7" class="portal-details">
+                <h4>CSR Portal - Lead Management</h4>
+                <ul>
+                    <li>Create Follow-up Leads</li>
+                    <li>Multi-source Attribution</li>
+                    <li>Priority Classification</li>
+                    <li>Status Tracking</li>
+                    <li>Performance Analytics</li>
+                    <li>Lead Conversion</li>
+                    <li>Channel Analysis</li>
+                    <li>Dashboard Stats</li>
+                </ul>
+            </div>
+            <div id="portal-details-8" class="portal-details">
+                <h4>Office Staff Portal - Support Functions</h4>
+                <ul>
+                    <li>Own Attendance Viewing</li>
+                    <li>Salary Invoice Access</li>
+                    <li>Print Salary Invoices</li>
+                    <li>Staff Queries</li>
+                    <li>Personal Records</li>
+                    <li>Quick Access Tools</li>
+                    <li>Self-service Functions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Deep Dive -->
+    <section id="modules" class="section">
+        <h2 class="section-title">8 Powerful Core Modules</h2>
+        <p class="section-subtitle">Each designed for specific institutional needs</p>
+        
+        <div class="tab-nav">
+            <button class="tab-btn active" onclick="switchTab(0)">📚 Academic</button>
+            <button class="tab-btn" onclick="switchTab(1)">💰 Financial</button>
+            <button class="tab-btn" onclick="switchTab(2)">✓ Attendance</button>
+            <button class="tab-btn" onclick="switchTab(3)">📈 Analytics</button>
+            <button class="tab-btn" onclick="switchTab(4)">👥 HR</button>
+            <button class="tab-btn" onclick="switchTab(5)">📞 Sales/CRM</button>
+            <button class="tab-btn" onclick="switchTab(6)">🔔 Communication</button>
+            <button class="tab-btn" onclick="switchTab(7)">🔒 Security</button>
+        </div>
+
+        <div class="tab-content active">
+            <div class="module-content">
+                <div>
+                    <h3>Academic Management</h3>
+                    <p style="color: var(--gray); margin-bottom: 1rem;">Complete scheduling, lesson tracking, and attendance management</p>
+                    <ul>
+                        <li>Recurring class schedules with custom patterns</li>
+                        <li>Teacher & student assignment</li>
+                        <li>Lesson tracking per student/subject</li>
+                        <li>Digital attendance marking</li>
+                        <li>Status tracking (scheduled → in-progress → completed)</li>
+                        <li>Real-time class session updates</li>
+                        <li>Monthly performance reports</li>
+                    </ul>
+                </div>
+                <div class="module-image">📅</div>
+            </div>
+        </div>
+
+        <div class="tab-content">
+            <div class="module-content">
+                <div>
+                    <h3>Financial Management</h3>
+                    <p style="color: var(--gray); margin-bottom: 1rem;">Automated billing, payroll, and expense tracking</p>
+                    <ul>
+                        <li>Fee chalan (invoice) generation</li>
+                        <li>Auto-calculated salary invoices</li>
+                        <li>Bonus & deduction management</li>
+                        <li>Payment tracking (cash, bank, cheque, online)</li>
+                        <li>Multi-currency support (19 currencies)</li>
+                        <li>Expense tracking & categorization</li>
+                        <li>Tax compliance reports (PDF/CSV/HTML)</li>
+                    </ul>
+                </div>
+                <div class="module-image">💳</div>
+            </div>
+        </div>
+
+        <div class="tab-content">
+            <div class="module-content">
+                <div>
+                    <h3>Attendance & Analytics</h3>
+                    <p style="color: var(--gray); margin-bottom: 1rem;">Dual attendance system for students and staff</p>
+                    <ul>
+                        <li>Dual attendance tracking (students + staff)</li>
+                        <li>Multiple marking authorities</li>
+                        <li>Absence reasons & leave management</li>
+                        <li>Historical data preservation</li>
+                        <li>Attendance statistics & trends</li>
+                        <li>Role-specific views</li>
+                        <li>Bulk operations support</li>
+                    </ul>
+                </div>
+                <div class="module-image">✓</div>
+            </div>
+        </div>
+
+        <div class="tab-content">
+            <div class="module-content">
+                <div>
+                    <h3>Analytics & Reporting</h3>
+                    <p style="color: var(--gray); margin-bottom: 1rem;">Data-driven insights and comprehensive dashboards</p>
+                    <ul>
+                        <li>Monthly performance aggregation</li>
+                        <li>Teacher performance metrics</li>
+                        <li>Student progress tracking</li>
+                        <li>Attendance trending & analysis</li>
+                        <li>Financial reconciliation</li>
+                        <li>Channel performance (CSR sources)</li>
+                        <li>Recruitment funnel analysis</li>
+                    </ul>
+                </div>
+                <div class="module-image">📊</div>
+            </div>
+        </div>
+
+        <div class="tab-content">
+            <div class="module-content">
+                <div>
+                    <h3>HR & Recruitment</h3>
+                    <p style="color: var(--gray); margin-bottom: 1rem;">Complete recruitment pipeline management</p>
+                    <ul>
+                        <li>Candidate profile creation</li>
+                        <li>Qualification & experience tracking</li>
+                        <li>Decision workflow (selected/rejected/pending)</li>
+                        <li>Historical decision tracking</li>
+                        <li>Candidate filtering & search</li>
+                        <li>HR metrics dashboard</li>
+                        <li>Selection rate analysis</li>
+                    </ul>
+                </div>
+                <div class="module-image">👥</div>
+            </div>
+        </div>
+
+        <div class="tab-content">
+            <div class="module-content">
+                <div>
+                    <h3>Sales & CRM</h3>
+                    <p style="color: var(--gray); margin-bottom: 1rem;">Complete lead and follow-up management</p>
+                    <ul>
+                        <li>Lead follow-up creation</li>
+                        <li>Multi-source attribution (phone, social, ads, etc.)</li>
+                        <li>Priority classification</li>
+                        <li>Status tracking (follow-up → trial)</li>
+                        <li>Remarks & notes</li>
+                        <li>CSR analytics dashboard</li>
+                        <li>Conversion tracking</li>
+                    </ul>
+                </div>
+                <div class="module-image">📞</div>
+            </div>
+        </div>
+
+        <div class="tab-content">
+            <div class="module-content">
+                <div>
+                    <h3>Communication</h3>
+                    <p style="color: var(--gray); margin-bottom: 1rem;">Institutional announcements and notifications</p>
+                    <ul>
+                        <li>Role-based announcement broadcasting</li>
+                        <li>Individual user targeting</li>
+                        <li>Read status tracking</li>
+                        <li>Timestamp logging</li>
+                        <li>Unread count notifications</li>
+                        <li>Real-time updates via Socket.IO</li>
+                        <li>Support ticket system</li>
+                    </ul>
+                </div>
+                <div class="module-image">🔔</div>
+            </div>
+        </div>
+
+        <div class="tab-content">
+            <div class="module-content">
+                <div>
+                    <h3>Security & Compliance</h3>
+                    <p style="color: var(--gray); margin-bottom: 1rem;">Enterprise-grade security and data protection</p>
+                    <ul>
+                        <li>JWT token-based authentication</li>
+                        <li>Role-based access control (RBAC)</li>
+                        <li>bcryptjs password hashing</li>
+                        <li>NoSQL injection protection</li>
+                        <li>Rate limiting (brute-force protection)</li>
+                        <li>Portal access control</li>
+                        <li>Audit trail & account deactivation</li>
+                    </ul>
+                </div>
+                <div class="module-image">🔒</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features" class="section section-alt">
+        <h2 class="section-title">8 Standout Features</h2>
+        <p class="section-subtitle">Capabilities that set us apart</p>
+        <div class="container">
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <h3>Recurring Schedules</h3>
+                    <p>Handle complex class patterns with custom day scheduling, automatic repeat cycles, and no manual entry for recurring classes.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💰</div>
+                    <h3>Auto-Calculated Payroll</h3>
+                    <p>Attendance-based salary calculation with bonus/deduction management. Generate payroll in seconds, not hours.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌍</div>
+                    <h3>Multi-Currency Support</h3>
+                    <p>Support 19 currencies (PKR, AED, USD, EUR, GBP, etc.) for global operations and international clients.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Real-time Updates</h3>
+                    <p>Socket.IO integration for live dashboards, instant notifications, and real-time class session tracking.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✓</div>
+                    <h3>Dual Attendance System</h3>
+                    <p>Track both student and staff attendance separately with granular control and historical data preservation.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📖</div>
+                    <h3>Islamic Specialization</h3>
+                    <p>Built specifically for Islamic education with Quran + Subjects specialization, not adapted from generic LMS.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📄</div>
+                    <h3>Tax Compliance</h3>
+                    <p>Automated expense reporting with PDF/CSV/HTML export for statutory compliance and auditing.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>Bulk Operations</h3>
+                    <p>Perform mass actions: bulk salary processing, multi-student scheduling, batch attendance marking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section id="roi" class="section">
+        <h2 class="section-title">Calculate Your Potential Savings</h2>
+        <p class="section-subtitle">See how much time and money you could save annually</p>
+        
+        <div class="calculator">
+            <div class="form-message" id="calculator-message"></div>
+            
+            <div class="calculator-group">
+                <label>Institution Size (Students)</label>
+                <select id="size" onchange="calculateROI()" oninput="calculateROI()">
+                    <option value="">Select your institution size</option>
+                    <option value="100">100-150 students</option>
+                    <option value="300">150-300 students</option>
+                    <option value="500">300-500 students</option>
+                    <option value="1000">500-1000 students</option>
+                    <option value="1500">1000+ students</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="calculator-group">
+                    <label>Current Admin Staff</label>
+                    <input type="number" id="adminStaff" placeholder="e.g., 2" min="1" oninput="calculateROI()">
+                </div>
+                <div class="calculator-group">
+                    <label>Monthly Salary (Average USD)</label>
+                    <input type="number" id="salary" placeholder="e.g., 1000" min="100" oninput="calculateROI()">
+                </div>
+            </div>
+
+            <div class="calculator-group">
+                <label>Hours Per Week on Admin Tasks</label>
+                <input type="number" id="hours" placeholder="e.g., 80" min="10" value="80" oninput="calculateROI()">
+            </div>
+
+            <div class="results" id="results">
+                <div class="result-item">
+                    <h4>Hours Saved Monthly</h4>
+                    <div class="result-value" id="hoursSaved">0</div>
+                </div>
+                <div class="result-item">
+                    <h4>Monthly Savings</h4>
+                    <div class="result-value" id="monthlySavings">$0</div>
+                </div>
+                <div class="result-item">
+                    <h4>Annual Savings</h4>
+                    <div class="result-value" id="annualSavings">$0</div>
+                </div>
+                <div class="result-item">
+                    <h4>Payback Period</h4>
+                    <div class="result-value" id="paybackPeriod">0 mo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="section">
+        <h2 class="section-title">Why Choose Quran Academy ERP?</h2>
+        <p class="section-subtitle">Compared to manual management and generic LMS solutions</p>
+        <div class="container">
+            <div class="comparison-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Manual Management</th>
+                            <th>Generic LMS</th>
+                            <th>Quran Academy ERP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Attendance Marking</strong></td>
+                            <td>Paper/Excel - Hours daily</td>
+                            <td>Digital but basic</td>
+                            <td><span class="check">✓</span> Digital + Real-time</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Payroll Automation</strong></td>
+                            <td>Manual calculation - Error prone</td>
+                            <td>Not included</td>
+                            <td><span class="check">✓</span> Auto-calculated</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Parent Portal</strong></td>
+                            <td>Email/Phone only</td>
+                            <td>Basic dashboard</td>
+                            <td><span class="check">✓</span> Full transparency portal</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Billing Management</strong></td>
+                            <td>Manual invoices</td>
+                            <td>Limited support</td>
+                            <td><span class="check">✓</span> Full billing suite</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Real-time Dashboards</strong></td>
+                            <td><span class="close">✗</span></td>
+                            <td><span class="close">✗</span></td>
+                            <td><span class="check">✓</span> Live updates</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Islamic Specialization</strong></td>
+                            <td><span class="close">✗</span></td>
+                            <td>Generic system</td>
+                            <td><span class="check">✓</span> Built for Islamic schools</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Schedule Management</strong></td>
+                            <td>Manual coordination</td>
+                            <td>Basic scheduling</td>
+                            <td><span class="check">✓</span> Advanced + recurring</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lead/CSR Management</strong></td>
+                            <td>Not tracked</td>
+                            <td>Not included</td>
+                            <td><span class="check">✓</span> Full CRM suite</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Analytics & Insights</strong></td>
+                            <td>Manual reports</td>
+                            <td>Basic reporting</td>
+                            <td><span class="check">✓</span> Advanced analytics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multi-Currency Support</strong></td>
+                            <td><span class="close">✗</span></td>
+                            <td><span class="close">✗</span></td>
+                            <td><span class="check">✓</span> 19 currencies</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Implementation Time</strong></td>
+                            <td>N/A (ongoing manual)</td>
+                            <td>4-8 weeks</td>
+                            <td><span class="check">✓</span> 1 week</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Support & Training</strong></td>
+                            <td>None</td>
+                            <td>Generic support</td>
+                            <td><span class="check">✓</span> Dedicated + onboarding</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials-section" class="testimonials-section">
+        <div class="container">
+            <h2>What Academy Owners Are Saying</h2>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"This system has transformed how we run our Quran academy. Parents are
+                        happier, teachers are less stressed, and we're actually making more money because we're not
+                        losing track of fee payments!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">NA</div>
+                        <div class="testimonial-info">
+                            <h5>Naqash</h5>
+                            <p>CEO, EFM Quran Academy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"I was spending 15 hours a week just on attendance and fee tracking. Now
+                        it takes me less than 2 hours. This has given me my life back and I can focus on what matters -
+                        teaching!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">NS</div>
+                        <div class="testimonial-info">
+                            <h5>Nadia Siddiqui</h5>
+                            <p>Principal, Al-Furqan Learning Center</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The parent portal alone is worth it. We used to get 50+ calls a day
+                        about attendance and progress. Now parents can see everything themselves. Game changer!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">HG</div>
+                        <div class="testimonial-info">
+                            <h5>Hameed Gul</h5>
+                            <p>Owner, Al-Hikmah Quran Academy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"We went from managing 30 students with chaos to managing 120 students
+                        smoothly. The system scaled perfectly with our growth. Best investment we ever made!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RA</div>
+                        <div class="testimonial-info">
+                            <h5>Rimsha Ali</h5>
+                            <p>Administrator, Al-Bayan Islamic Institute</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Setting this up was easier than I thought. Within a week we had
+                        everything migrated and running. The support team was amazing throughout the process!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MT</div>
+                        <div class="testimonial-info">
+                            <h5>Muhammad Tariq</h5>
+                            <p>Director, Noor Al-Huda Academy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Our teachers love it! They can mark attendance from their phones, see
+                        their schedules, and communicate with parents. It's made our academy look so professional."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SZ</div>
+                        <div class="testimonial-info">
+                            <h5>Sana Zahra</h5>
+                            <p>Manager, Al-Ihsan Quran School</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Testimonials -->
+    <div class="video-testimonials-grid">
+        <div class="video-testimonial-card">
+            <div class="video-aspect-ratio aspect-portrait">
+                <video controls playsinline preload="metadata" poster="" style="background:#f0f0f0;">
+                    <source src="https://res.cloudinary.com/dgn2suijh/video/upload/v1764182559/Review1_wtssjr.mp4"
+                        type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">NA</div>
+                <div class="testimonial-info">
+                    <h5>Muhammad Naqash</h5>
+                    <p>CEO, EFM Quran Academy</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-testimonial-card">
+            <div class="video-aspect-ratio aspect-portrait">
+                <video controls playsinline preload="metadata" poster="" style="background:#f0f0f0;">
+                    <source src="https://res.cloudinary.com/dgn2suijh/video/upload/v1764182390/Review2_ntiglj.mp4"
+                        type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">SZ</div>
+                <div class="testimonial-info">
+                    <h5>Hameed Gul</h5>
+                    <p>Owner, Al-Hikmah Quran Academy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screenshot Carousel -->
+    <section class="screenshot-carousel-section">
+        <div class="container">
+            <h2>See The System In Action - Real Screenshots</h2>
+            <p>Take a tour through the actual interface. See how easy it is to manage students, track attendance, handle
+                fees, and more!</p>
+        </div>
+
+        <div class="carousel-wrapper">
+            <div class="carousel-container" id="screenshotCarousel">
+                <div class="screenshot-card">
+                    <img src="img/screenshots/admin-dashboard.svg" alt="Dashboard Overview" loading="lazy" width="320" height="200"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='📊 Dashboard Overview<br/>(Replace with actual screenshot)'">
+                    <div class="screenshot-caption">
+                        <h4>📊 Complete Admin Dashboard</h4>
+                        <p>See everything at a glance - students, attendance, fees, and performance metrics all in one
+                            place</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="img/screenshots/student-management.svg" alt="Student Management" loading="lazy" width="320" height="200"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='👨‍🎓 Student Management<br/>(Replace with actual screenshot)'">
+                    <div class="screenshot-caption">
+                        <h4>👨‍🎓 Student Management</h4>
+                        <p>Easily add, edit, and track student information with our intuitive interface</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="img/screenshots/student-attendance.svg" alt="Attendance Tracking" loading="lazy" width="320" height="200"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='✅ Attendance Tracking<br/>(Replace with actual screenshot)'">
+                    <div class="screenshot-caption">
+                        <h4>✅ Quick Attendance</h4>
+                        <p>Mark attendance in 30 seconds - teachers love how fast and simple it is</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="img/screenshots/fee-management.svg" alt="Fee Management" loading="lazy" width="320" height="200"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='💰 Fee Management<br/>(Replace with actual screenshot)'">
+                    <div class="screenshot-caption">
+                        <h4>💰 Fee Management</h4>
+                        <p>Generate challans, track payments, and send automatic reminders - all automated</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="img/screenshots/schedule.svg" alt="Class Scheduling" loading="lazy" width="320" height="200"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='📅 Class Scheduling<br/>(Replace with actual screenshot)'">
+                    <div class="screenshot-caption">
+                        <h4>📅 Smart Scheduling</h4>
+                        <p>Prevent double-booking with automatic conflict detection and recurring class setup</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="img/screenshots/parent-portal.svg" alt="Parent Portal" loading="lazy" width="320" height="200"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='👨‍👩‍👧 Parent Portal<br/>(Replace with actual screenshot)'">
+                    <div class="screenshot-caption">
+                        <h4>👨‍👩‍👧 Parent Portal</h4>
+                        <p>Parents can see real-time attendance, progress reports, and fee statements anytime</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="img/screenshots/teacher-view.svg" alt="Teacher Dashboard" loading="lazy" width="320" height="200"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='👨‍🏫 Teacher View<br/>(Replace with actual screenshot)'">
+                    <div class="screenshot-caption">
+                        <h4>👨‍🏫 Teacher Dashboard</h4>
+                        <p>Teachers see their schedule, mark attendance, and track student progress effortlessly</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="img/screenshots/reports.svg" alt="Reports & Analytics" loading="lazy" width="320" height="200"
+                        onerror="this.style.fontSize='1rem'; this.innerHTML='📈 Reports & Analytics<br/>(Replace with actual screenshot)'">
+                    <div class="screenshot-caption">
+                        <h4>📈 Detailed Reports</h4>
+                        <p>Generate comprehensive reports on attendance, fees, performance, and more in one click</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="carousel-nav">
+                <button class="carousel-nav-btn" id="carouselPrev" aria-label="Previous screenshot">&#10094;</button>
+                <button class="carousel-nav-btn" id="carouselNext" aria-label="Next screenshot">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Common questions from prospective institutions</p>
+        <div class="container" style="max-width: 800px;">
+            <div class="faq-item">
+                <div class="faq-question" tabindex="0" role="button" aria-expanded="false" onclick="toggleFAQ(this)" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); toggleFAQ(this); }">How long does implementation take?</div>
+                <div class="faq-answer">
+                    <p>We typically complete full implementation in 1 week. This includes data migration, user setup, staff training, and going live.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" tabindex="0" role="button" aria-expanded="false" onclick="toggleFAQ(this)" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); toggleFAQ(this); }">Is my data secure?</div>
+                <div class="faq-answer">
+                    <p>Yes. We use enterprise-grade security including JWT authentication, role-based access control, password encryption with bcryptjs, NoSQL injection protection, and rate limiting. All data is encrypted in transit and at rest. We comply with GDPR and international data protection standards.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" tabindex="0" role="button" aria-expanded="false" onclick="toggleFAQ(this)" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); toggleFAQ(this); }">Can I import existing student and teacher data?</div>
+                <div class="faq-answer">
+                    <p>Yes, absolutely. We handle data migration from Excel, CSV, or your existing system. Our team will work with you to ensure clean, accurate data import. We typically map your existing fields to our system and perform data validation before going live.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" tabindex="0" role="button" aria-expanded="false" onclick="toggleFAQ(this)" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); toggleFAQ(this); }">What about custom requirements?</div>
+                <div class="faq-answer">
+                    <p>We can accommodate custom requirements. The system is highly configurable for institution-specific needs. We offer customization services for features beyond the standard package. We'll discuss your needs during the consultation phase.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" tabindex="0" role="button" aria-expanded="false" onclick="toggleFAQ(this)" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); toggleFAQ(this); }">Do you provide training and support?</div>
+                <div class="faq-answer">
+                    <p>Yes. We provide comprehensive training for all roles during implementation. We have dedicated support via email and phone. We also offer video tutorials and a knowledge base. Premium plans include priority support and quarterly training refreshers.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" tabindex="0" role="button" aria-expanded="false" onclick="toggleFAQ(this)" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); toggleFAQ(this); }">What's the contract term?</div>
+                <div class="faq-answer">
+                    <p>It's a one-time payment and this system is yours. No recurring fees, no hidden charges. You own it forever.</p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Lead Capture Form -->
+    <section class="section section-alt">
+        <h2 class="section-title">Start Your Free 7-Day Trial Today</h2>
+        <p class="section-subtitle">No credit card required. Full access to all features.</p>
+        
+        <div class="form-container">
+            <div class="form-message" id="form-message"></div>
+            <form id="leadForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Institution Name *</label>
+                        <input type="text" name="institution" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Number of Students *</label>
+                        <select name="studentCount" required>
+                            <option value="">Select range</option>
+                            <option value="50-100">50-100</option>
+                            <option value="100-200">100-200</option>
+                            <option value="200-500">200-500</option>
+                            <option value="500-1000">500-1000</option>
+                            <option value="1000+">1000+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Role *</label>
+                        <select name="role" required>
+                            <option value="">Select your role</option>
+                            <option value="director">Director/Principal</option>
+                            <option value="admin">Admin/Manager</option>
+                            <option value="hr">HR Manager</option>
+                            <option value="finance">Finance Manager</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group full">
+                    <label>I'm interested in</label>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: normal; cursor: pointer;">
+                            <input type="checkbox" name="interest" value="trial"> Free Trial
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: normal; cursor: pointer;">
+                            <input type="checkbox" name="interest" value="demo"> Schedule Demo
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: normal; cursor: pointer;">
+                            <input type="checkbox" name="interest" value="pricing"> Get Pricing
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group full">
+                    <label>Additional Notes</label>
+                    <textarea name="notes" rows="3" placeholder="Tell us about your current challenges or specific needs..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Get Started Now</button>
+                <p style="text-align: center; color: var(--gray); font-size: 0.9rem; margin-top: 1rem;">✓ No spam • ✓ We'll contact you within 24 hours • ✓ No credit card required</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Demo Video Modal -->
+    <div class="demo-overlay" id="demoOverlay" onclick="closeDemoModal(event)">
+        <div class="demo-modal">
+            <button class="demo-close" onclick="closeDemoModal()">&times;</button>
+            <iframe id="demoIframe" src="" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <p>Quran Academy ERP is a comprehensive management system designed specifically for Islamic educational institutions. We help schools automate operations and improve outcomes.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#modules">Modules</a></li>
+                    <li><a href="#roi">ROI Calculator</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: muhammadahmed7863@gmail.com</p>
+                <p>Phone: 03426039432</p>
+                <p><a href="https://wa.me/923426039432?text=Assalam-o-Alaikum!%20I'm%20interested%20in%20Quran%20Academy%20ERP.%20Can%20you%20share%20more%20details%3F" target="_blank" style="color: #25D366; text-decoration: none; font-weight: 600;">Chat on WhatsApp ↗</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Quran Academy ERP. All rights reserved. | Built with ❤️ for Islamic Education</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.getElementById('menuToggle');
+            const isActive = navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', isActive);
+        }
+
+        // Close menu when link clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+                document.getElementById('menuToggle').classList.remove('active');
+            });
+        });
+
+        // Close menu on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                document.getElementById('navLinks').classList.remove('active');
+                document.getElementById('menuToggle').classList.remove('active');
+            }
+        });
+
+        // Portal Details Toggle
+        function showPortalDetails(index) {
+            const allDetails = document.querySelectorAll('.portal-details');
+            const allCards = document.querySelectorAll('.portal-card');
+            
+            allDetails.forEach(detail => detail.classList.remove('show'));
+            allCards.forEach(card => card.classList.remove('active'));
+            
+            document.getElementById(`portal-details-${index}`).classList.add('show');
+            document.querySelectorAll('.portal-card')[index].classList.add('active');
+        }
+
+        // Module Tabs
+        function switchTab(index) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            tabs[index].classList.add('active');
+            buttons[index].classList.add('active');
+        }
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const isActive = element.parentElement.classList.toggle('active');
+            element.setAttribute('aria-expanded', isActive);
+        }
+
+        // ROI Calculator
+        function calculateROI() {
+            const size = parseFloat(document.getElementById('size').value) || 0;
+            const adminStaff = parseFloat(document.getElementById('adminStaff').value) || 0;
+            const salary = parseFloat(document.getElementById('salary').value) || 0;
+            const hours = parseFloat(document.getElementById('hours').value) || 0;
+
+            if (!size || !adminStaff || !salary || !hours) return;
+
+            // Savings calculation
+            const hourlyRate = salary / 160; // Assuming 160 hours per month
+            const currentHoursPerMonth = hours * 4.33; // Convert weeks to months
+            
+            // Estimated automation savings per institution size
+            const savingsPercentage = Math.min(size / 1000 * 0.85, 0.85); // Max 85% savings
+            const hoursSavedPerMonth = currentHoursPerMonth * savingsPercentage;
+            
+            const monthlySavings = hoursSavedPerMonth * hourlyRate * adminStaff;
+            const annualSavings = monthlySavings * 12;
+            
+            // Assume monthly cost is ~$500 for basic plan, $1000 for enterprise
+            const monthlySystemCost = size > 500 ? 1000 : 500;
+            const paybackMonths = monthlySavings > 0 ? Math.round(monthlySystemCost / monthlySavings * 10) / 10 : 0;
+
+            document.getElementById('hoursSaved').textContent = Math.round(hoursSavedPerMonth);
+            document.getElementById('monthlySavings').textContent = '$' + Math.round(monthlySavings).toLocaleString();
+            document.getElementById('annualSavings').textContent = '$' + Math.round(annualSavings).toLocaleString();
+            document.getElementById('paybackPeriod').textContent = paybackMonths + ' mo';
+            
+            document.getElementById('results').classList.add('show');
+        }
+
+        // Form Handling
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const submitBtn = form.querySelector('.submit-btn');
+            const messageDiv = document.getElementById('form-message');
+            
+            // Collect form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner"></span> Submitting...';
+            
+            // Simulate form submission (in production, this would post to your backend)
+            setTimeout(() => {
+                // Success message
+                messageDiv.textContent = '✓ Thank you! We received your request. Check your email for next steps.';
+                messageDiv.className = 'form-message success';
+                
+                // Reset form
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Get Started Now';
+                
+                // Clear message after 5 seconds
+                setTimeout(() => {
+                    messageDiv.textContent = '';
+                    messageDiv.className = 'form-message';
+                }, 5000);
+                
+            }, 1500);
+        }
+
+        // Screenshot Carousel
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('screenshotCarousel');
+            const prevBtn = document.getElementById('carouselPrev');
+            const nextBtn = document.getElementById('carouselNext');
+            if (!container || !prevBtn || !nextBtn) return;
+            function getScrollAmount() {
+                const firstCard = container.querySelector('.screenshot-card');
+                if (!firstCard) return 344;
+                const style = getComputedStyle(container);
+                const gap = parseFloat(style.gap) || 24;
+                return firstCard.offsetWidth + gap;
+            }
+            prevBtn.addEventListener('click', () => {
+                container.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            });
+            nextBtn.addEventListener('click', () => {
+                container.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            });
+        });
+
+        // Demo Video Modal
+        function openDemoModal() {
+            document.getElementById('demoIframe').src = 'https://www.youtube.com/embed/CMHQLB6b_Qg?si=dFwkdqU7M-S1ouEG&rel=0&loop=1&playlist=CMHQLB6b_Qg&autoplay=1';
+            document.getElementById('demoOverlay').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeDemoModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            document.getElementById('demoOverlay').classList.remove('show');
+            document.getElementById('demoIframe').src = '';
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeDemoModal();
+        });
+
+        // Scroll to form
+        function scrollToForm() {
+            document.querySelector('.form-container').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Auto-open first portal details on page load
+        window.addEventListener('load', () => {
+            showPortalDetails(0);
+        });
+    </script>
+</body>
+</html>
